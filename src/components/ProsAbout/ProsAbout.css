@@ -1,0 +1,396 @@
+.ProsAbout {
+    width: 85%;
+    margin: 50px auto;
+    background-color: #ffffff;
+}
+
+.prosAboutOuter {
+    position: relative;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+}
+
+.prosAboutOuter .bgt {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.prosAboutOuter .bgb {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.prosAboutOuter .bgt img {
+    width: calc(30% + 10vw);
+    opacity: .7;
+    float: right;
+}
+
+.prosAboutOuter .bgb img {
+    width: calc(30% + 10vw);
+    opacity: .7;
+}
+
+@font-face {
+    font-family: Causten;
+    src: url(../../assets/fonts/Causten-Regular.otf);
+}
+
+@font-face {
+    font-family: CaustenBold;
+    src: url(../../assets/fonts/Causten-Bold.otf);
+}
+
+@font-face {
+    font-family: CaustenBlack;
+    src: url(../../assets/fonts/Causten-Black.otf);
+}
+
+
+.ProsAbout .leftSection {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.ProsAbout .leftSection h1 {
+    color: #1558a3;
+    font-size: calc(30px + 4vw);
+    font-weight: 600;
+    letter-spacing: -2px;
+    font-family: CaustenBold;
+}
+
+.ProsAbout .leftSection h1 span {
+    color: #ffce12;
+}
+
+.leftSection .allParams {}
+
+.allParams .eachParamSection {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.eachParamSection .inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.eachFigParam {
+    padding: 5px;
+}
+
+.eachFigParam h3 {
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #1558a3;
+    font-size: 25px;
+    font-family: CaustenBold;
+}
+
+.eachFigParam h5,
+.eachItem p {
+    color: #000000;
+    font-family: Causten;
+    margin-bottom: 0;
+    font-size: calc(12px + .5vw);
+}
+
+.eachParamSection .eachItem p {
+    text-align: center;
+    font-size: 15px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+.eachParamSection .eachItem {
+    padding: 5px;
+}
+
+.eachParamSection .eachItem .icon {
+    display: flex;
+    justify-content: center;
+}
+
+.eachParamSection .eachItem .icon img {
+    width: 60px;
+}
+
+
+/* Right Section ================================================================= */
+
+.rightSection {
+    padding: 0 10px;
+}
+
+.rightSection .eachRow {}
+
+.rightSection .eachRow .quoteDiv {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 80px;
+}
+
+.rightSection .eachRow .quoteDiv img {
+    width: 60px;
+}
+
+.quotationSection h3 {
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #000;
+    font-size: 22px;
+    font-family: CaustenBold;
+    text-align: center;
+}
+
+.ieltsSection {
+    display: flex;
+}
+
+.ieltsSection .heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.heading h3 {
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #fff;
+    font-size:calc(12px + 1vw);
+    font-family: CaustenBold;
+    text-align: center;
+    background-color: #1558a3;
+    padding:10px;
+    width:100%;
+}
+
+.heading h3 span{
+    color:var(--blueLight)
+}
+
+.ieltsSection .eachColSection .iconDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.ieltsSection .eachColSection .iconDiv img {
+    width: 100px;
+}
+
+.ieltsSection .eachColSection p {
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+.ieltsSection .eachColSection > span {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+.graphSection {
+    display: flex;
+    margin-top: 20px;
+}
+
+.barsSection {
+    /* border-left: 2px solid #666;
+    border-bottom: 2px solid #666; */
+}
+
+.barsSection .bar {
+    height: 15px;
+    background-color: #1558a3;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.barsSection #applicationSuccess{
+    animation-duration: 4s;
+    animation-delay: 3s;
+}
+
+.barsSection #authenticAdvice{
+    animation-duration: 4s;
+    animation-delay: 3s;
+}
+
+.barsSection #scholarships{
+    width:50%;
+    animation-duration: 2s;
+    animation-delay: 3s;
+}
+
+.barsSection #satisfiedClients{
+    animation-duration: 4s;
+    animation-delay: 3s;
+}
+
+.barsSection #visaSuccess{
+    width:90%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+@keyframes applicationSuccess {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes scholarships {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes visaSuccess {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+.barsSection .inner {
+    padding-left: 0px;
+}
+
+
+
+.barsSection .eachBarDiv .outerBlue {
+    background-color: rgba(21, 88, 163, 60%);
+    border-radius: 0px 10px 10px 0px;
+}
+
+.barsSection .eachBarDiv p {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-family: Causten;
+}
+
+.barsSection .eachBarDiv p:first-child {
+    font-size: 12px;
+}
+
+.barsSection .eachBarDiv p:last-child {
+    font-size: 12px;
+    text-align: right;
+}
+
+
+.figureSection h1 {
+    font-family: Causten;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.figureSection p {
+    font-family: Causten;
+    margin-bottom: 0;
+}
+
+@media (max-width:500px) {
+    .figureSection p{
+        font-size: calc(12px + .2vw);
+    }
+    .figureSection h1{
+        font-size: calc(14px + 1vw);
+    }
+}
+
+.figureSection h5 {
+    font-family: CaustenBold;
+    margin-bottom: 0;
+    color: #1558a3;
+}
+
+
+.figureSection hr {
+    margin: 5px 0px;
+}
+
+.intakes .eachItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intakes h1 {
+    text-align: center;
+    font-size:  80px;
+    color: #ffce12;
+    margin-bottom: 0;
+    font-family: Causten;
+}
+
+.valueDiv {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.intakes h4 {
+    text-align: left;
+    margin-bottom: 0;
+    font-family: CaustenBold;
+}
+
+.completebgLine {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+}
+
+.completebgLine img {
+    width: 100%;
+    height: 50%;
+    opacity: .08;
+}
+
+.trophyImg {
+    transition: all .5s ease;
+    animation-name: trophy;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes trophy {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.15);
+    }
+}
+
+@media (max-width:500px){
+    .intakes h4 {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+}
+

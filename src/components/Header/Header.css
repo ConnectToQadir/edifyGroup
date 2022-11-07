@@ -1,0 +1,129 @@
+.Header {
+    height: 100vh;
+    background-color: #1c56b9;
+    position: relative;
+}
+
+.headerImg{
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    right:0;
+    height: 100vh;
+    width:40%;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+.headerImg img{
+    height:110%;
+}
+
+.Header .overlay {
+    background-image: linear-gradient(90deg, var(--blueDark), transparent);
+    width: 60%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.Header .contentdiv {
+    width: 50%;
+    margin-left: 6vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-bottom: 140px;
+}
+
+.Header .contentdiv button{
+    padding:10px 20px;
+}
+
+.Header .contentdiv button:focus{
+    outline: none;
+}
+
+
+@media (max-width:768px) {
+    .Header .contentdiv {
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding:30px;
+        padding-bottom: 80px;
+    }
+
+    .headerImg{
+        display:none;
+    }
+
+    .Header .overlay{
+        width:100%;
+        /* background-color: rgba(0, 0, 0, 90%); */
+    }
+
+    .Header .bottomContentBoxes{
+        width:98%;
+    }
+
+    .Header .contentdiv h1 {
+        text-align: center;
+    }
+
+    .Header .contentdiv p:first-child {
+        text-align: center;
+    }
+
+    .Header .contentdiv p{
+        text-align: center;
+    }
+
+}
+
+
+.bottomContentBoxesOuter{
+    position: relative;
+}
+
+
+
+.Header .bottomContentBoxes{
+    width:85%;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    transform: translateY(-100px);
+}
+
+.eachBottomContentBox{
+    padding:40px 30px;
+}
+
+.eachBottomContentBox p{
+    text-align: justify;
+}
+
+
+.eachBottomContentBox a{
+    color:var(--blueLight);
+    font-family: var(--paraFont);
+    text-decoration: none;
+}
+
+.eachBottomContentBox a:hover .fa-arrow-right{
+    margin-left: 20px;
+}
+
+.eachBottomContentBox a:hover{
+    color:rgb(250, 250, 50);
+}
+
+.eachBottomContentBox .fa-arrow-right{
+    margin-left: 8px;
+    transition:.5s;
+}

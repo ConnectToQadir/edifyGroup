@@ -1,0 +1,147 @@
+.Apply {
+    width: 85%;
+    margin: 10vh auto;
+}
+
+.allSections{
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 10%);
+}
+
+.eachSection h3 {
+    padding: 8px 20px;
+    color: var(--blueMain);
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #f5f5f5;
+    margin-bottom: 0;
+}
+
+.allInputFields {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.eachSection .eachInput {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.eachInput input ,.eachInput select{
+    padding: 4px 7px;
+    border: .5px solid #ccc;
+    font-size: 14px;
+    font-family: var(--paraFont);
+}
+
+.eachInput input:focus, .eachInput select{
+    outline: none;
+}
+
+.eachInput label {
+    /* border:1px solid blue; */
+    font-family: var(--paraFont);
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.phoneDiv {
+    border: .5px solid #ddd;
+    display: flex;
+}
+
+.phoneDiv input{
+    border: none;
+    flex-grow: 1;
+}
+
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+
+
+.btnsSection{
+    display: flex;
+    justify-content: flex-end;
+    padding:20px;
+}
+
+.btnsSection img{
+    width: 20px;
+    margin:0px 20px;
+}
+
+.btnsSection button{
+    padding:4px 7px;
+    border:none;
+    margin-left:10px;
+    border:2px solid var(--blueMain);
+    background-color: #fff;
+    color:var(--blueMain);
+    transition:all .5s ease;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.btnsSection button:disabled{
+    opacity:.8;
+    cursor:not-allowed;
+}
+
+.btnsSection button:hover{
+    background-color: var(--blueMain);
+    color:#fff;
+}
+
+.btnsSection button:focus{
+    outline:none;
+}
+
+.radio,.checkBox{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.eachRadio,.eachCheckBox{
+    padding:2px 7px;
+    display: flex;
+}
+
+.eachCheckBox span ,.eachRadio span{
+    padding:0px 10px 0px 5px;
+}
+
+.eachQualificationSection{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.errPara{
+    color:red;
+}
+
+
+.addMoreQuaSection{
+    font-family: var(--paraFont);
+    padding:10px;
+}
+
+.addMoreQuaSection span{
+    border:1px solid var(--blueMain);
+    padding:5px;
+    color:var(--blueMain);
+    user-select: none;
+    font-size: 12px;
+}
+
+.addMoreQuaSection .fa-solid{
+    margin-right: 5px;
+}

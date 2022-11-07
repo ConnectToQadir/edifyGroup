@@ -1,0 +1,159 @@
+.postPage{
+    width:85%;
+    margin:8vh auto;
+}
+
+
+
+.PostView{
+    padding:0;
+}
+
+.PostView h1{
+    font-family: var(--headFont);
+    color:var(--blueMain);
+    font-size: calc(16px + 1.5vw);
+    font-weight: 400;
+}
+
+.PostView .categoryPara{
+    background-color: var(--blueMain);
+    display: inline-block;
+    color:#fff;
+    font-weight: 600;
+    padding:3px 5px;
+    font-size: 14px;
+}
+
+.PostView .categoryPara a{
+    color:#fff;
+    text-decoration: none;
+}
+
+.PostView .autherAndDateSection{
+    color:#666;
+}
+
+.PostView img{
+    width:100%;
+    border-radius: .30rem;
+    margin:20px 0px;
+}
+
+.PostView .autherAndDateSection .fa-solid{
+    margin-right: 5px;
+    color: var(--blueMain);
+}
+
+.PostView .autherAndDateSection span{
+    margin-right: 20px;
+    font-size: .875rem;
+    font-family: var(--paraFont);
+}
+
+.PostView p{
+    font-family: var(--paraFont);
+}
+
+.categoriesSideBar{
+    padding:0px 30px;
+}
+
+@media (max-width:992px) {
+    .categoriesSideBar{
+        padding:0;
+    }
+}
+
+.categoriesSideBar .categoriesSideBarInner{
+    padding:20px;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 5%);
+    border-radius: .25rem;
+}
+
+.categoriesSideBarInner ul{
+    list-style: none;
+    margin-top: 10px;
+}
+
+.categoriesSideBarInner h3,.relatedPosts h3{
+    font-family: var(--headFont);
+    color: var(--blueMain);
+    font-weight: 400;
+}
+
+.categoriesSideBarInner ul li a{
+    font-family: var(--paraFont);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.categoriesSideBarInner ul li{
+    padding:5px 0px;
+}
+
+.loadingImgDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.loadingImgDiv img{
+    width:50px;
+}
+
+.SharingSection{
+    display: flex;
+    align-items: center;
+    margin:30px 0px;
+}
+
+.SharingSection .ShareOn{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.SharingSection p{
+    margin-bottom: 0;
+}
+
+.SharingSection .ShareOn .eachSocialMedia{
+    margin:5px;
+}
+
+.SharingSection .ShareOn .eachSocialMedia .fa-brands{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items:center;
+    color:#fff;
+}
+
+.relatedPosts{
+    margin-top: 30px;
+    padding:20px;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 5%);
+}
+
+
+.eachPost{
+    padding:15px 0px;
+}
+
+.eachPost .imgSection{
+    border-radius:5px;
+    overflow: hidden;
+}
+
+.eachPost .imgSection img{
+    width:100%;
+}
+
+.eachPost .titleDiv{
+    padding-left: 5px;
+}
+
+.eachPost .titleDiv a{
+    font-size: 15px;
+}

@@ -1,0 +1,160 @@
+.AdminBlogs,.AdminReviews{
+    width:85%;
+    margin:8vh auto;
+    padding:20px;
+    background-color: #eee;
+    border-radius: .25rem;
+    border:.5px solid var(--blueMain);
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 15%);
+}
+
+.AdminBlogsOuter .allBlogs,.AdminReviewsOuter .allBlogs,.allReviews{
+    width:85%;
+    margin:8vh auto;
+    padding:0px;
+}
+
+.blogImageSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0px;
+}
+
+.blogImage{
+    width:70%;
+}
+
+.AdminBlogs form .eachInputSection,.AdminReviews form .eachInputSection{
+    display: flex;
+    flex-direction: column;
+    padding:10px 0px;
+}
+
+.AdminBlogs form .eachInputSection label,.AdminReviews form .eachInputSection label{
+    font-family: var(--headFont);
+}
+
+
+.AdminBlogs form .eachInputSection input,.AdminBlogs form .eachInputSection textarea,.AdminBlogs form .eachInputSection select ,.AdminReviews form .eachInputSection input,.AdminReviews form .eachInputSection textarea,.AdminReviews form .eachInputSection select{
+    border: none;
+    padding:5px 7px;
+    background-color: #fff;
+    border-radius: .25rem;
+}
+
+.jodit-wysiwyg{
+    background-color: #fff;
+}
+
+.AdminBlogs form .eachInputSection input:focus,.AdminBlogs form .eachInputSection textarea:focus,.AdminBlogs form .eachInputSection select:focus,.AdminBlogs button:focus ,.AdminReviews form .eachInputSection input:focus,.AdminReviews form .eachInputSection textarea:focus,.AdminReviews form .eachInputSection select:focus,.AdminReviews button:focus{
+    outline: none;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 15%);
+}
+
+.buttonSection{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.buttonSection button{
+    padding:5px 7px;
+    margin-left: 10px;
+    font-family: var(--headFont);
+    border: 2px solid var(--blueMain);
+    color:var(--blueMain)
+}
+
+.buttonSection button:hover{
+    background-color: var(--blueMain);
+    color:#fff;
+}
+
+.selectImg{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+.selectImg label{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    border:2px solid var(--blueMain);
+    color: var(--blueMain);
+    border-radius: .30rem;
+    padding:5px 7px;
+    transition:all .5s;
+    cursor: pointer;
+}
+
+.selectImg label:hover{
+    background-color: var(--blueMain);
+    color: #fff;
+}
+
+.selectImg label .fa-solid{
+    margin-right: 10px;
+}
+
+.jodit-status-bar{
+    visibility: hidden;
+    background-color: #fff;
+}
+
+
+.jodit-container:not(.jodit_inline) .jodit-wysiwyg li{
+    list-style-position: inside;
+}
+
+.AdminBlogsOuter .eachBlog .blogInner .contentDiv h1{
+    font-size: calc(10px + .3vw);
+}
+
+.AdminBlogsOuter .eachBlog .blogInner .readMoreLink{
+    font-size: calc(10px + .2vw);
+}
+
+.AdminBlogsOuter .eachBlog .blogInner .contentDiv .authUdateDiv{
+    font-size: calc(10px + .2vw);
+}
+
+.AdminBlogsOuter .blogInner{
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 15%);
+}
+
+
+.blogEditIcons{
+    display: flex;
+    justify-content:flex-end;
+}
+
+.blogEditIcons .fa-solid{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 15%);
+    cursor: pointer;
+    transition:all .3s;
+}
+
+.blogEditIcons .fa-solid:hover{
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 20%);
+}
+
+.blogEditIcons .editIcon{
+    color: var(--blueMain);
+}
+
+.blogEditIcons .delIcon{
+    color: #c60001;
+}

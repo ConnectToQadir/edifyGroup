@@ -1,0 +1,70 @@
+.Services {
+    width: 85%;
+    margin: 8vh auto;
+    overflow: hidden;
+}
+
+
+.actualServies {
+    padding: 5vw 0vw;
+}
+
+.sideBar {
+    padding-top: 20px;
+}
+
+.EachServiceOuter {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.eachServiceInner {
+    padding: 20px 30px;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 10%);
+    transition: all .5s ease;
+}
+
+.eachServiceInner:hover {
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 20%);
+}
+
+
+.eachServiceInner .imgDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.eachServiceInner img {
+    width: 50%;
+}
+
+.eachServiceInner h3 {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.counceling {
+    padding: 0;
+    margin-top: 50px;
+}
+
+.counceling .eachServiceInner {
+    background-color: var(--blueMain);
+    padding:30px 40px;
+}
+
+.counceling .eachServiceInner h3 {
+    color: #fff;
+}
+
+.counceling .eachServiceInner p {
+    color: #fff;
+}
+
+.actualServies p{
+    text-align: justify;
+}

@@ -1,0 +1,117 @@
+.SocialMedia{
+    margin:auto;
+    width:85%;
+    margin-top: 200px;
+    margin-bottom: 120px;
+    padding:20px 0px;
+    background-image: linear-gradient(45deg,var(--blueDark), var(--blueMain));
+    border-radius: 20px;
+}
+
+@media (max-width:950px){
+    .SocialMedia{
+        margin-top: 250px;
+    }
+}
+
+@media (max-width:768px){
+    .SocialMedia{
+        margin-top: 550px;
+    }
+}
+
+@media (max-width:460px){
+    .SocialMedia{
+        margin-top: 580px;
+    }
+}
+
+@media (max-width:430px){
+    .SocialMedia{
+        margin-top: 630px;
+    }
+}
+
+.SocialMedia h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.allsocialMedia{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.eachSocialMedia{
+    font-family: var(--paraFont);
+}
+
+.eachSocialMedia p{
+    color:#fff;
+    font-size:15px;
+    padding-top: 5px;
+    margin-bottom: 0;
+}
+
+@media (max-width:780px) {
+    .eachSocialMedia p{
+        display: none;
+    }
+}
+
+.allsocialMedia .eachSocialMedia a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.allsocialMedia .eachSocialMedia a .fa-brands{
+    background-color: #fff;
+    color:#000;
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0px 5px;
+    text-decoration: none;
+    font-size: 20px;
+    transition:all .3s ease;
+    box-shadow: 1px 1px 6px 0px rgba(0,0,0,70%);
+}
+
+.allsocialMedia .eachSocialMedia a:hover .fa-brands{
+    transform: translateY(-15px);
+}
+
+
+.eachSocialMedia a:hover .fa-facebook-f{
+    background-color:#1977f1;
+    color:#fff;
+}
+
+.eachSocialMedia a:hover .fa-twitter{
+    background-color:#1d9ff3;
+    color:#fff;
+}
+
+.eachSocialMedia a:hover .fa-linkedin{
+    background-color:#2767af;
+    color:#fff;
+}
+
+.eachSocialMedia a:hover .fa-instagram{
+    background-color:#eb2351;
+    color:#fff;
+}
+.eachSocialMedia a:hover .fa-youtube{
+    background-color:#ff0103;
+    color:#fff;
+}
+
+.eachSocialMedia a:hover .fa-whatsapp{
+    background-color:#2dd44c;
+    color:#fff;
+}

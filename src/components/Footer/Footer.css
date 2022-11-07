@@ -1,0 +1,195 @@
+
+.Footer{
+    background-image: linear-gradient(45deg,var(--blueDark), var(--blueMain));
+}
+
+.footerSocialInner img{
+    width:270px;
+}
+
+.footerinner{
+    padding-top: 60px;
+    width:85%;
+    margin:auto;
+}
+
+.footerSocialInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:30px 0px;
+    border-bottom:1px solid rgb(182, 182, 182);
+    margin-bottom: 35px;
+}
+
+.footerSocialInner p{
+    margin:20px 0px;
+    text-align: center;
+}
+
+.footerSocialInner .socialDiv{
+    display: flex;
+}
+
+.footerSocialInner .socialDiv div{
+    width:35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerSocialInner .socialDiv div a{
+    font-size: 20px;
+    color:var(--blueLight);
+    transition:all .5s ease;
+}
+
+.footerSocialInner .socialDiv div:hover a{
+    color:var(--blueLight);
+}
+
+/* Middle Footer */
+
+.actualFooter .contactSection{
+    padding-bottom: 20px;
+}
+
+.actualFooter .contactSection ul li{
+    display: flex;
+    align-items: center;
+    padding:4px 0px;
+}
+
+.actualFooter .contactSection ul li .fa-solid{
+    padding-right: 15px;
+    color:var(--blueLight);
+}
+
+.actualFooterEachSection{
+    padding-bottom: 20px;
+}
+
+.actualFooterEachSection ul li{
+    list-style: none;
+}
+
+.actualFooterEachSection ul li{
+    list-style: none;
+    margin:2px 0px;
+}
+
+.actualFooterEachSection ul li a{
+    font-family: var(--paraFont);
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 15px;
+    transition:all .5s ease;
+    position: relative;
+}
+
+.actualFooter .contactSection a{
+    font-family: var(--paraFont);
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 14px;
+    transition:all .5s ease;
+}
+
+.contactSection a:hover{
+    color:var(--blueLight);
+}
+
+.actualFooterEachSection ul li a:before,.actualFooterEachSection ul li a:before{
+    content: "";
+    width:0px;
+    height: 2px;
+    background-color: var(--blueLight);
+    position: absolute;
+    top:8px;
+    left: 0;
+    transition: all .5s ease;
+}
+
+.actualFooterEachSection ul li a:hover::before,.actualFooterEachSection ul li a:hover::before{
+    width:10px;
+}
+
+
+.actualFooterEachSection ul li a:hover{
+    padding-left: 13.5px;
+    color:var(--blueLight);
+}
+
+.newsLetterSection div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.newsLetterSection p{
+    font-size: 15px;
+    font-family: var(--paraFont);
+    color: var(--gray);
+}
+
+.newsLetterSection input{
+    border:none;
+    padding:10px 15px;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.newsLetterSection input:focus{
+    outline: none;
+}
+
+.newsLetterSection button{
+    border:none;
+    padding:8px 13px;
+    background-color: var(--blueLight);
+    color:#fff;
+    border:2px solid var(--blueLight);
+    transition:all .5s ease;
+}
+
+.newsLetterSection p{
+    color:var(--gray)
+}
+
+.newsLetterSection button:hover{
+    background-color: transparent;
+    border:2px solid var(--blueLight);
+    color:var(--blueLight);
+}
+
+.copyRightSection p ,.paraUnderFooterLogo{
+    text-align: center;
+    font-size: 14px;
+    color:var(--gray);
+    font-family: var(--paraFont);
+    margin-bottom: 0;
+}
+
+.copyRightSection{
+    padding:30px 0px;
+}
+
+@media (max-width:768px){
+    .actualFooterEachSection h3,.contactSection h3{
+        text-align: center;
+    }
+
+    .actualFooterEachSection ul li{
+        text-align: center;
+    }
+    .actualFooter .contactSection ul li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .newsLetterSection p{
+        text-align: center;
+    }
+}
+

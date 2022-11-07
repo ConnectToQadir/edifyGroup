@@ -1,0 +1,248 @@
+.EachDataRow {
+    font-size: 13px;
+}
+
+.Enquiries {
+    margin-top: 40px;
+}
+
+.headerRow{
+    position: sticky;
+    top:0;
+    background-color: #d2d3ed;
+    z-index: 2;
+}
+
+.headerRow th {
+    padding: 8px 5px;
+    font-weight: 500;
+    border: 1px solid rgb(182, 182, 182);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.EachDataRow:hover{
+    outline: 2px solid #d2d3ed;
+}
+
+.EachDataRow td {
+    border: .5px solid rgb(204, 204, 204);
+    padding: 2px 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.wordbreak {
+    word-break: break-all;
+}
+
+.enquiriesTable{
+    overflow: scroll;
+    padding: 20px 0px;
+    max-height: 60vh;
+}
+
+.enquiriesTable::-webkit-scrollbar {
+    border-radius: 15px;
+    height: 8px;
+    width: 8px;
+    margin:10px;
+}
+
+.enquiriesTable::-webkit-scrollbar-thumb {
+    height: 20px;
+    border-radius: 20px;
+    background-color: gray;
+}
+
+.enquiriesTable::-webkit-scrollbar-track {
+    background-color:#fff;
+    border:1px solid rgb(196, 196, 196);
+}
+
+.enquiriesTable table {
+    min-width: 50vh;
+    border-collapse:separate;
+}
+
+
+.enquiriesHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.enquiriesHeader h3 {
+    margin: 0;
+    font-family: var(--headFont);
+    margin-right: 10px;
+}
+
+.enquiriesHeader button {
+    padding: 3px 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    transition: all .5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: auto;
+}
+
+.enquiriesHeader button:focus {
+    outline: none;
+}
+
+.enquiriesHeader button:hover {
+    color: green;
+}
+
+.actionsIcons {
+    text-align: center;
+    color: gray;
+}
+
+.actionsIcons .fa-solid{
+    font-size: 14px;
+    padding:4px;
+    background-color: rgba(0, 0, 0, 10%);
+    border-radius: 3px;
+    color:#555;
+    border:1px solid transparent;
+}
+
+.actionsIcons a {
+    text-decoration: none;
+}
+
+.actionsIcons .fa-rectangle-list {
+    margin-right: 5px;
+}
+
+.actionsIcons .fa-rectangle-list:hover {
+    color: rgb(2, 93, 179);
+    background-color:rgba(2, 93, 179, 15%) ;
+    border:1px solid rgba(2, 93, 179, 25%) ;
+    cursor: pointer;
+}
+
+.actionsIcons .fa-trash:hover {
+    color: rgb(179, 2, 2);
+    cursor: pointer;
+    background-color:rgba(179, 2, 2, 15%) ;
+    border: 1px solid rgba(179, 2, 2, 25%);
+}
+
+.actionsIcons .updateIcon{
+    cursor: pointer;
+}
+
+.actionsIcons .updateIcon:hover{
+    color:#29abe3;
+    background-color: #e6f7ff;
+    border: 1px solid #9ce0ff;
+}
+
+.Applications {
+    width: 85%;
+    margin: 8vh auto;
+
+}
+
+.Applications .ApplicationsTable {
+    padding: 0;
+}
+
+.filterInputDiv {
+    margin-bottom: 20px;
+}
+
+.filterInputDiv input {
+    padding: 5px 10px;
+    width: 100%;
+    border: 1px solid #eee;
+}
+
+.filterInputDiv input:focus {
+    outline: none;
+}
+
+.applicationSelect {
+    border: none;
+}
+
+.applicationSelect:focus {
+    outline: none;
+}
+
+.serialStickyhead{
+    position: sticky;
+    left: 0;
+    top: 0;
+    background-color: #d2d3ed;
+}
+
+.serialSticky{
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+}
+
+.serialStickyheadName{
+    position: sticky;
+    left: 26px;
+    top: 0;
+    background-color: #d2d3ed;
+}
+
+.serialStickyName{
+    position: sticky;
+    left: 26px;
+    background-color: #fff;
+}
+
+.toggleEnquiryTypeBtn .toggleBtnOuterDiv{
+    border:1px solid #9ac9ff;
+    cursor: pointer;
+    width: 44px;
+    height: 24px;
+    position: relative;
+    padding:4px;
+    margin-right: 10px;
+}
+
+.toggleNode{
+    width:20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    color:#fff;
+    justify-content: center;
+    background-color:#1456a3;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transition:all .3s;
+    font-size:12px;
+}
+
+.ApplicationsTable .imgDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding:15vh 0vh;
+}
+
+
+.ApplicationsTable .imgDiv img{
+    width: 50px;
+}

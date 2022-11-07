@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-webkit-scrollbar{
+  border-radius: 15px;
+  height:8px;
+  width:4px;
+}
+::-webkit-scrollbar-track{
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+
+::-webkit-scrollbar-thumb{
+  height: 20px;
+  border-radius: 20px;
+  background-color: #febf00;
+}

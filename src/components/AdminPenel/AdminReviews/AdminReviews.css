@@ -1,0 +1,36 @@
+.allReviews img{
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    border:.5px solid rgba(00, 0, 0, 30%);
+}
+
+.allReviews{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.allReviews .clientDesc{
+    padding:8px;
+}
+
+.clientDesc .clientDescInner{
+    padding: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(00, 0, 0, 20%);
+    border-radius: .30rem;
+}
+
+.clientDescInner .stdDetail{
+    display: flex;
+}
+
+.clientDesc .clientDescInner .imgDiv{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clientDesc .clientDescInner .nameAndWho{
+    padding: 0;
+}

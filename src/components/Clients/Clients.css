@@ -1,0 +1,53 @@
+
+.clientOuter{
+    background-color: rgb(240, 240, 240);
+    padding:40px 0px;
+}
+
+.ClientsInner{
+    width:85%;
+    margin:40px auto;
+}
+
+.ClientsInner > p{
+    text-align: center;
+}
+
+.ClientsInner > h1{
+    text-align: center;
+    margin:20px 0px 50px 0px;
+}
+
+.eachClient{
+    display: flex;
+    justify-content: center;
+    padding:8px;
+}
+
+.eachClient{
+    height: 100px;
+}
+
+.eachClient img{
+    width:70%;
+    transition:all .5s ease;
+}
+
+.eachClient .eachClientInner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid rgb(214, 214, 214);
+    height: 100%;
+    background-color: #fff;
+    border-radius:.50rem;
+}
+
+.eachClient:hover img{
+    filter: grayscale(0%);
+}
+
+.allClients{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,61 @@
+.FAQ{
+    width:85%;
+    margin: 7vh auto;
+}
+
+
+.FAQ .wrapper{
+    margin-top: 20vh;
+}
+
+.FAQ .wrapper > p{
+    text-align: center;
+}
+
+.FAQ .wrapper h2{
+    margin-bottom: 30px;
+}
+
+.allquestions{
+    /* border:1px solid red; */
+}
+
+.allquestions .eachQuestionsSection{
+    width:100%;
+    /* border:1px solid green; */
+}
+
+.allquestions .eachQuestionSection .fa-chevron-up{
+    transform: rotate(180deg);
+}
+
+.eachQuestionSection{
+    border:.5px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 15px;
+    cursor: pointer;
+    user-select: none;
+    color:var(--blueMain);
+    border-bottom: none;
+}
+
+.eachQuestionSection h5{
+    font-family: var(--paraFont);
+    margin-bottom: 0;
+    font-size: 15px;
+    color:var(--blueMain);
+}
+
+.eachAsnwerSection{
+    border:.5px solid #ccc;
+    border-top: none;
+    height: 0%;
+    overflow: hidden;
+    transition:.6s;
+}
+
+.eachAsnwerSection p{
+    padding:10px;
+}

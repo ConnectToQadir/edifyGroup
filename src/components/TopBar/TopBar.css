@@ -1,0 +1,39 @@
+.topBarOuter{
+    background-color: rgb(20 86 163);
+}
+
+.topBar{
+    display: flex;
+    justify-content: space-between;
+    padding:5px 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.topBar .eachSectionTopBar{
+    display: flex;
+    align-items: center;
+}
+
+.topBar .eachSectionTopBar ul{
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+}
+
+.topBar .eachSectionTopBar ul li{
+    padding:0px 5px;
+}
+
+.topBar .eachSectionTopBar ul li a{
+    padding:0px 5px;
+    color:#fff;
+    text-decoration: none;
+    font-family: var(--paraFont);
+    font-size: 13px;
+}
+
+.topBar .eachSectionTopBar ul li .fa-solid{
+    margin-right: 5px;
+}

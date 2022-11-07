@@ -1,0 +1,83 @@
+.Blog{
+    width: 85%;
+    margin: 8vh auto;
+}
+
+.allBlogs{
+    margin-top: 8vh;
+}
+
+.blogOuter{
+    background-color: #ffffff;
+}
+
+.eachBlog{
+    padding:15px;
+}
+
+.eachBlog .blogInner{
+    padding:20px;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    border-radius: .25rem;
+    height: 100%;
+}
+
+.eachBlog .blogInner .imgDiv{
+    overflow: hidden;
+}
+
+.eachBlog .blogInner .imgDiv img{
+    width:100%;
+    display: block;
+    height: 230px;
+    object-fit: cover;
+    border-radius: .30rem;
+    transition:all .5s ease;
+}
+
+.eachBlog .blogInner .imgDiv img:hover{
+    transform: scale(1.15);
+}
+
+.eachBlog .blogInner .contentDiv .authUdateDiv{
+    color:#949598;
+    padding:15px 0px;
+    font-family: var(--paraFont);
+    font-size: 15px;
+}
+
+.eachBlog .blogInner .contentDiv h1{
+    font-family: var(--headFont);
+    font-size:calc(14px + .5vw);
+    font-weight: 400;
+}
+
+.eachBlog .blogInner .contentDiv h1 a{
+    color: var(--blueMain);
+}
+
+.eachBlog .blogInner .contentDiv p{
+    font-family: var(--paraFont);
+}
+
+.eachBlog .blogInner .contentDiv .authUdateDiv .fa-solid{
+    margin-right: 10px;
+}
+
+.eachBlog .blogInner .readMoreLink .fa-angle-right{
+    color:var(--blueLight);
+    margin-left: 5px;
+}
+
+.eachBlog .blogInner .readMoreLink a{
+    color:var(--blueLight);
+}
+
+.loadingImgDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.loadingImgDiv img{
+    width:70px;
+}

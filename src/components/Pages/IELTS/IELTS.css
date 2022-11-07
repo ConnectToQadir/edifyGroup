@@ -1,0 +1,173 @@
+.IELTS{
+    width:85%;
+    margin: 8vh auto;
+}
+
+
+/* coachingListSection */
+
+.ieltsDetailSectionOuter{
+    margin: 10vh 0vh; 
+}
+
+.benefits{
+    margin:20vh 0vh;
+}
+
+.ieltsDetailSection .imgDiv{
+    margin:5vh 0vh;
+}
+
+.ieltsDetailSection .imgDiv img{
+    width:100%;
+    border-radius: 20px;
+}
+
+.coachingListSection .eachItem{
+    background-color: var(--blueLight);
+    border-radius: 10px;
+    transition:all .5s ease;
+    user-select: none;
+}
+
+.coachingListSection .eachItem:hover{
+    background-color: var(--blueDark);
+}
+
+.coachingListSection .eachItem p{
+    padding: 15px 20px;
+    margin:10px 0px;
+}
+
+
+
+/* Prepration Setion Styling */
+
+.eachPreprationItem{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.eachPreprationItem .fa-solid{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--blueLight);
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.eachPreprationItem .contentDiv{
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+.onlineRegistrationOuter{
+    background-color: var(--blueDark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    padding:30px;
+}
+
+.onlineRegistrationOuter h2{
+    margin-bottom: 30px;
+}
+
+.onlineRegistration{
+    display: flex;
+    flex-direction: column;
+}
+
+.onlineRegistration input , .onlineRegistration textarea , .onlineRegistration button{
+    padding:10px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
+    font-family: var(--paraFont);
+}
+
+.onlineRegistration input:focus , .onlineRegistration textarea:focus , .onlineRegistration button:focus{
+    outline: none;
+}
+
+.onlineRegistration button{
+    background-color: var(--blueLight);
+    font-weight: 600;
+    color:#fff;
+    border:2px solid transparent;
+    transition:all .5s ease;
+}
+
+.onlineRegistration button:hover{
+    background-color: transparent;
+    font-weight: 600;
+    border:2px solid var(--blueLight);
+    color: var(--blueLight);
+}
+
+/* Benefits Section=============================================== */
+
+.benefits > h2{
+    margin-bottom: 2vw;
+}
+
+.allbenefits{
+}
+
+.allbenefits .eachBenefit{
+    padding:0px 3vw;
+    margin:20px 0px;
+}
+
+.allbenefits .eachBenefit .iconDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+}
+
+.allbenefits .eachBenefit .iconDiv .fa-solid{
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--blueLight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+    font-size: 25px;
+}
+
+.allbenefits .eachBenefit .contentDiv h2{
+    font-size:calc(10px + 1vw);
+}
+
+.allbenefits .eachBenefit .contentDiv p{
+    
+}
+
+.benefits h2,.benefits p{
+    text-align: center;
+}
+
+.ieltsTestsLoges .imgDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ieltsTestsLoges .imgDiv img{
+    width:60%;
+    transition:all .5s;
+}
+
+
+.ieltsTestsLoges .imgDiv img:hover{
+    transform: scale(1.2);
+}

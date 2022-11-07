@@ -1,0 +1,171 @@
+.Contact{
+    width:85%;
+    margin: auto;
+    margin:70px auto;
+}
+
+
+.allContacts{
+    padding-top:10vh;
+}
+
+
+.eachContact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eachContact h3{
+    text-align: center;
+}
+
+.eachContact p{
+    text-align: center;
+    font-family: var(--paraFont);
+    font-size: 15px;
+}
+
+.eachContact .icon {
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--blueMain);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+    font-size: 22px;
+    margin:10px 0px;
+    transition:all .5s ease;
+    border:2px solid transparent;
+}
+
+.eachContact .icon:hover{
+    background-color: #fff;
+    color:var(--blueMain);
+    border:2px solid var(--blueMain)
+}
+
+
+
+/* ======================================================= */
+
+.detailSection{
+    padding:0;
+    margin:30px 0px;
+}
+
+.eachBranch{
+    padding-top:90px;
+    padding-bottom:40px;
+    /* height: 500px; */
+}
+
+.eachConDet{
+    padding:10px;
+}
+
+.eachConDet .head{
+    display: flex;
+    align-items: center;
+}
+
+.eachConDet .head div{
+    border-bottom: 0;
+    font-family: var(--headFont);
+    font-weight: 600;
+    color:var(--blueMain)
+}
+
+.eachConDet a{
+    text-decoration: none;
+    font-family: var(--paraFont);
+    color:gray;
+}
+
+.eachConDet p{
+    padding-left: 40px;
+    margin-bottom: 0;
+}
+
+.eachConDet .icon{
+    color:#fff;
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: var(--blueLight);
+
+}
+
+.mapSection{
+    padding:0px;
+    height: 100%;
+    margin:30px 0px;
+}
+
+/* .map{
+    padding:0 20px;
+
+} */
+
+.mapouter{
+    border-radius: 15px;
+    overflow: hidden;
+    width:100%;
+}
+
+/* ===================================== */
+.branchesNav{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.branchesNav a{
+    font-family:var(--paraFont);
+    font-size:calc(10px + .5vw);
+}
+
+.eachNavOuter{
+    padding-top: 10px;
+    padding-bottom: 0px;
+    width:32.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:768px) {
+    .eachNavOuter{
+        width:50%;
+    }
+}
+
+.eachNavOuter .innerNav{
+    color: var(--blueMain);
+    border:1px solid rgba(0, 0, 255, 10%);
+    text-decoration: none;
+    padding:1vw;
+    width:100%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.branchesNav .commingSoon a{
+    color:rgba(20, 84, 149,30%);
+    font-family: var(--paraFont);
+}
+
+.commingSoonBranches{
+    padding:20vh 0vh;
+}
+
+.commingSoonBranches h1{
+    text-align: center;
+}

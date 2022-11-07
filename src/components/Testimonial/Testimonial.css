@@ -1,0 +1,85 @@
+.Testimonial {
+    padding: 10vw 0;
+}
+
+
+.TestimonialsInner {
+    width: 85%;
+    margin: auto;
+}
+
+.TestimonialsInner>h1 {
+    width: 70%;
+    margin-bottom: 5vw;
+}
+
+.eachSayingInner {
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 40%);
+}
+
+
+.allSayings .eachSaying .imgDiv img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.eachSaying .clientDesc {
+    display: flex;
+}
+
+
+.eachSaying .eachSayingInner .stars {
+    color: #f27a0c;
+    font-size: 20px;
+}
+
+.eachSaying .eachSayingInner .stars .fa-star {
+    padding: 1px;
+}
+
+.allSayings .eachSaying {
+    padding: 15px;
+    margin: 0;
+}
+
+
+.eachSaying .eachSayingInner {
+    padding: 30px;
+    background-image: linear-gradient(45deg, var(--blueDark), rgb(23, 100, 177));
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+.eachSaying .eachSayingInner>p {
+    margin: 30px 0px;
+}
+
+.eachSaying .eachSayingInner .clientDesc .imgDiv {
+    padding-right: 20px;
+}
+
+.eachSaying .eachSayingInner .clientDesc .nameAndWho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nameAndWho p {
+    margin-bottom: 0;
+}
+
+.nameAndWho p:last-child {
+    color: rgb(199, 199, 199);
+}
+
+
+
+.studentReview {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}

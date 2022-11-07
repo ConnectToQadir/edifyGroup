@@ -1,0 +1,38 @@
+.About {
+    width: 85%;
+    margin: auto;
+    margin: 70px auto;
+}
+
+
+.About .aboutUsInner {
+    margin: 6vw 0px;
+}
+
+
+/* CEO Message ========================================= */
+.ceoMessage, .CEOImg{
+    padding: 30px;
+}
+
+.ceoMessageText{
+    padding:20px;
+}
+
+.ceoMessageText p:first-child{
+    margin-bottom: 4px;
+}
+
+.ceoMessageText h5{
+    font-family: var(--headFont);
+    color: var(--blueMain);
+}
+
+.CEOImg img{
+    width:100%;
+}
+
+.CEOSignature{
+    width:130px;
+
+}

@@ -1,0 +1,189 @@
+.Destinations{
+    width:90%;
+    margin:8vh auto;
+}
+
+.eachCountry{
+    margin:10vh 0vh;
+}
+
+.eachCountry > h2 ,.eachCountry > p{
+    text-align: center;
+}
+
+.Countrywhy{
+    margin-top:40px;
+}
+
+.Countrywhy ol li{
+    color:#fff;
+}
+
+.countryWhyEachItemOuter{
+    margin-bottom:5vh;
+}
+
+.countryWhyEachItem{
+    padding:30px;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 0px 10px 2px;
+}
+
+.countryWhyEachItem h2{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    height: 7vw;
+    font-size: calc(12px + 1.5vw);;
+}
+
+@media (max-width:768px) {
+    .countryWhyEachItem h2{
+        height: 9vw;
+        font-size: calc(12px + 1vw);
+    }
+}
+
+
+.countryWhyEachItem ul li{
+    font-family: var(--paraFont);
+}
+
+.countryWhyEachItem p{
+    font-family: var(--paraFont);
+    text-align: justify;
+}
+
+.countryWhyEachItem p .fa-solid{
+    margin-right: 10px;
+}
+
+.countryWhyEachItem ul{
+    padding-left: 0pt;
+}
+
+.countryWhyEachItem ul li{
+    list-style:circle inside;
+    font-family:var(--paraFont);
+    font-size: 15px;
+}
+
+/* Process Design to apply for a country ======================================================= */
+
+.process{
+    margin-bottom:20vh;
+    margin-top: 10vh;
+}
+
+.process p, .process h2{
+    text-align: center;
+    font-family: var(--headFont);
+}
+
+.process h2{
+    margin-bottom: 40px;
+}
+
+.allProcesses5,.allProcesses3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.allProcesses5 .eachProcess{
+    width:20%;
+    padding:10px;
+}
+
+.allProcesses3 .eachProcess{
+    width:32%;
+}
+
+@media (max-width:992px) {
+    .allProcesses5 .eachProcess,.allProcesses3 .eachProcess{
+        width:100%;
+    }
+}
+
+.eachProcessInner{
+    border:2px solid rgba(87, 118, 255, 0.3);
+    border-radius: 15px;
+    padding:30px;
+    height: 100%;
+    transition:all .5s;
+}
+
+.eachProcessInner:hover{
+    background-color:rgba(87, 118, 255, 0.25);
+}
+
+.eachProcessInner .iconDiv{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.eachProcessInner .iconDiv h4{
+    margin:8px 0px;
+}
+
+.eachProcessInner .iconDiv .icon{
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(87, 118, 255, 0.3);
+    color:var(--blueMain);
+    font-size: 20px;
+}
+
+.eachProcessInner p{
+    margin-bottom: 0;
+    color:rgb(70, 70, 70);
+}
+
+.eachProcess{
+    margin:10px 0px;
+}
+
+/* Top Universities ======================================================= */
+
+.universities > p{
+    margin-bottom:5px;
+}
+
+.allUniversitesList{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5vh;
+}
+
+
+.allUniversitesList .eachUniversity{
+    width:50%;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:600px){
+    .allUniversitesList .eachUniversity{
+        width:100%;
+    }
+}
+
+.allUniversitesList .eachUniversity .iconDiv{
+    padding:5px;
+    color:var(--blueMain);
+}
+
+.allUniversitesList .eachUniversity p{
+    margin-bottom: 0;
+    font-family: var(--paraFont);
+}
+
+.paraWithList div{
+    display: flex;
+    text-align: left;
+}

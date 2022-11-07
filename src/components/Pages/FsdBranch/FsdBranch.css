@@ -1,0 +1,56 @@
+.actualCampus{
+    width:85%;
+    margin: 8vh auto;
+}
+
+.allImages{
+    margin-top: 40px;
+}
+
+.eachImageOuter{
+    padding: 15px;
+    border-radius:.25rem;
+    overflow: hidden;
+    transition:all .4s;
+}
+
+.eachImageOuter .imgDiv{
+    position: relative;
+    overflow: hidden;
+}
+
+.eachImageOuter .imgDescLayer{
+    position: absolute;
+    top:100%;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 60%);
+    padding: 15px;
+    border-radius: .25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:all .5s;
+}
+
+.eachImageOuter:hover .imgDescLayer{
+    top:0;
+}
+
+.eachImageOuter .imgDescLayer h4{
+    color:#fff;
+    font-family: var(--headFont);
+    text-align: center;
+}
+
+.eachImageOuter:hover{
+    transform: scale(1.1);
+}
+
+.eachImageOuter img{
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 15%);
+    border-radius:.25rem;
+    width: 100%;
+    height:auto;
+}

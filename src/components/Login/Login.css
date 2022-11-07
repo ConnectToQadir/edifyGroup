@@ -1,0 +1,74 @@
+.loginForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginForm .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-30px);
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: .5px solid #ccc;
+}
+
+.loginForm .logo img{
+    width: 65%;
+    height: 65%;
+}
+
+.loginForm form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:60px;
+    background-color: #eee;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 10%);
+    border: .5px solid #ccc;
+}
+
+.loginForm form h1{
+    font-size: calc(12px + 1vw);
+    color: #1553a1;
+    font-family: var(--headFont);
+}
+
+.loginForm form input{
+    margin-bottom: 15px;
+    padding:3px 10px;
+    border:1px solid transparent;
+}
+
+.loginForm form input:focus{
+    outline: none;
+    border: .5px solid #ccc;
+}
+
+.loginForm form .btnDiv{
+    display:flex;
+    justify-content: center;
+}
+
+.loginForm form .btnDiv button{
+    padding:4px 10px;
+    border:none;
+    background-color: #1553a1;
+    color:#fff;
+    font-weight: 500;
+    transition: all .5s ease;
+}
+
+.loginForm form .btnDiv button:focus{
+    outline: 0.5px solid rgba(0, 0, 0, 100%);
+}
+
+.loginForm form .btnDiv button:hover{
+    color: #fff;
+    background-color:#1553a1;
+}

@@ -1,0 +1,77 @@
+.upadatesOuter {
+    background-color: #f3f3f6;
+}
+
+.Updates {
+    width: 85%;
+    margin: 8vh auto;
+}
+
+.allNews {
+    margin: 8vh 0vh;
+}
+
+.eachNewsOuter {
+    margin-bottom: 30px;
+}
+
+.eachNewsInner {
+    border-radius: .40rem;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 15%);
+    height: 100%;
+    transition:all .5s;
+}
+
+.eachNewsInner:hover{
+    transform: scale(1.09);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 35%);
+}
+
+.eachNewsInner .imgDiv {
+    overflow: hidden;
+    height: 250px;
+}
+
+
+.eachNewsInner .imgDiv img {
+    transition: all .5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eachNewsInner:hover .imgDiv img {
+    z-index: 1;
+}
+
+.eachNewsInner .contentDiv {
+    padding: 20px;
+}
+
+.eachNewsInner .contentDiv p {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-family: var(--paraFont);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.eachNewsInner .contentDiv p:last-child{
+    font-size: 14px;
+}
+
+.eachNewsInner .contentDiv h4 {
+    font-family: var(--headFont);
+    font-weight: 500;
+    font-size: 18px;
+    transition: all .5s;
+}
+
+.eachNewsInner:hover .contentDiv h4 {
+    text-decoration: underline;
+}

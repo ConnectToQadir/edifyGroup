@@ -1,0 +1,284 @@
+.CvDesign{
+    margin:8vh auto;
+    width: 90%;
+}
+
+.actualCVbuilder{
+    margin-top: 8vh;
+    display: flex;
+}
+
+.liveViewSection{
+    padding: 0;
+}
+
+.liveViewSectionInner{
+    box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 10%);
+    overflow: hidden;
+}
+
+.CvDesign .bgClr{
+    background-color: #2b3743;
+    padding:auto 25px;
+}
+
+.topboxes div{
+    padding:20px;
+}
+
+.CvDesign .nameAndDesig h5{
+    color:#fff;
+}
+
+.CvDesign .bgClr:last-child{
+    background-color: #fff;
+}
+
+.CvDesign .nameAndPhotoSection{
+    background-color:#548ca8;
+}
+
+.CvDesign .sideBar{
+    padding:calc(3px + 1vw);
+}
+
+.sideBarEachSection{
+    padding:calc(3px + 1vw) 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 30%);
+}
+
+.sideBarEachSection h5,.sideBarEachSection p,.sideBarEachSection ul{
+    color:#fff;
+    list-style-position: inside;
+}
+
+.sideBarEachSection{
+    padding:20px 0px;
+}
+
+.CvDesign .contactSection{
+    border-top:0px;
+}
+
+.CvDesign .nameAndDesig{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:25px;
+}
+
+.CvDesign .nameAndDesig h2{
+    color:#fff;
+    text-transform: uppercase;
+}
+
+.eachQualification{
+    padding:10px;
+}
+
+.CvDesign .addMoreQualificationBtn{
+    border:none;
+    padding:3px 5px;
+    font-size: 12px;
+    margin:10px 15px;
+    color:var(--blueMain);
+    background-color: transparent;
+    border: 1px solid var(--blueMain);
+    font-weight: 700;
+}
+
+.CvDesign .addMoreQualificationBtn:hover{
+    background-color: var(--blueMain);
+    color:#fff;
+}
+
+.CvDesign .imgSection .imgDiv{
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    border:6px solid #fff;
+    background-color: #e4e6e7;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.CvDesign .imgSection .imgDiv img{
+    width:100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.eachContactUser{
+    color:#fff;
+    padding:2px 0px;
+    display: flex;
+    align-items: center;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.eachContactUser .fa-solid{
+    width:25px;
+    height: 25px;
+    display: grid;
+    align-items: center;
+}
+
+/* Righ SideBar Style Section ================================== */
+
+.rightSideBarSection{
+    padding: 25px;
+}
+
+.eachRightSideBarSection .headingSection{
+    display: flex;
+    align-items: center;
+    padding:15px 0px;
+}
+
+.eachRightSideBarSection .headingSection h5{
+    padding-right: 5px;
+    margin-bottom: 0;
+    text-transform:uppercase;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+.eachRightSideBarSection .headingSection .line{
+    border:1px solid #000;
+    display: flex;
+    width: 100%;
+    height: 2px;
+}
+
+.eachRightSideBarSection ul li > span{
+    width: 100%;
+    display: inline-block;
+}
+
+.eachRightSideBarSection ul li{
+    list-style:none;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.eachRightSideBarSection ul li > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eachRightSideBarSection ul li > div .fa-solid{
+    font-size: 10px;
+    padding-right: 10px;
+}
+
+.eachRightSideBarSection ul li p{
+    list-style-position: inside;
+    font-weight: 400;
+    padding-left: 25px;
+    margin-bottom: 0;
+    color:rgb(78, 78, 78);
+}
+
+.eachRightSideBarSection ul li .desigName{
+    color:rgb(122, 122, 122)
+}
+
+.defaultImg{
+    font-size: 100px;
+    background-color: #e4e6e7;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color:#aeb4b7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.uploadImg{
+    position: absolute;
+    height: 30%;
+    background-color:rgba(0, 0, 0, 40%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    color:#fff;
+    bottom: -50px;
+    cursor: pointer;
+    transition:all .2s;
+}
+
+.CvDesign .imgSection .imgDiv:hover .uploadImg{
+    bottom: 0px;
+}
+
+.loader{
+    width:100%;
+    position: absolute;
+    height: 100%;
+    top:0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* CV Input Section Style ======================================= */
+
+.inputsSection{
+    padding:0px;
+    padding-right: 25px;
+}
+
+.eachInfoSection{
+    border:2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.inputsSection .eachInfoSectionHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 10px;
+    background-color: #ddd;
+}
+
+.inputsSection .eachInfoSectionHeader h4{
+    margin-bottom: 0;
+    font-family: var(--headFont);
+    font-size: 20px;
+}
+
+.inputsSection .eachInfoSectionHeader .fa-solid{
+    border:1px solid #ccc;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: .5s ease;
+    display:grid;
+    place-items: center;
+    background-color: #fff;
+}
+
+.inputsSection .eachInputSection{
+    display: flex;
+    flex-direction: column;
+    padding:5px;
+}
+
+.inputsSection .eachInputSection label{
+    margin-bottom: 0px;
+}
