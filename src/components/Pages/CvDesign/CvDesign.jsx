@@ -182,19 +182,18 @@ const CvDesign = () => {
             <NavBar />
             <div className="CvDesign">
                 <EachPageHeader heading="CV Builder" />
-                <button onClick={generatePdf}>Download PDF</button>
-                <div ref={applicationRef} className="col-8 liveViewSection">
-                    <div className="liveViewSectionInner">
-                        <div className="row topboxes">
-                            <div style={{backgroundColor:"#2b3743"}} className="col-4 bgClr"></div>
-                            <div style={{backgroundColor:"#eee"}} className="col-8 bgClr"></div>
+                <div style={{ border: "1px solid red", display: "none" }} className="col-8 liveViewSection">
+                    <div ref={applicationRef} style={{ width: "575px" }} className="liveViewSectionInner">
+                        <div style={{ display: "flex" }} className="topboxes">
+                            <div style={{ backgroundColor: "#2b3743" }} className="col-4 bgClr"></div>
+                            <div style={{ backgroundColor: "#eee" }} className="col-8 bgClr"></div>
                         </div>
-                        <div style={{backgroundColor:"#548ca8"}} className="row nameAndPhotoSection">
-                            <div style={{"display":"flex","flexDirection":"column","justifyContent":"center","padding":"25px"}} className="col-9 nameAndDesig">
-                                <h2 style={{color:"#fff",textTransform:"uppercase"}}>{cvData.name}</h2>
-                                <h5 style={{color:"#fff"}}>{cvData.desig}</h5>
+                        <div style={{ backgroundColor: "#548ca8", display: "flex", justifyContent: "space-between", padding: "0px 20px" }}>
+                            <div style={{ "display": "flex", "flexDirection": "column", "justifyContent": "center" }}>
+                                <h2 style={{ fontSize: "28px", color: "#fff", textTransform: "uppercase", fontWeight: "700", marginBottom: "4px" }}>{cvData.name}</h2>
+                                <h5 style={{ color: "#fff", fontSize: "15px", marginBottom: "0px" }}>{cvData.desig}</h5>
                             </div>
-                            <div className="col-3 imgSection">
+                            <div>
                                 <input
                                     name='file'
                                     type="file"
@@ -202,19 +201,19 @@ const CvDesign = () => {
                                     style={{ display: "none" }}
                                     onChange={handleFileInputChange}
                                 />
-                                <div style={{"width":"150px","height":"150px","borderRadius":"50%","border":"6px solid #fff","backgroundColor":"#e4e6e7","overflow":"hidden","display":"flex","alignItems":"center","justifyContent":"center","position":"relative"}}>
+                                <div style={{ "width": "100px", "height": "100px", "borderRadius": "50%", "border": "6px solid #fff", "backgroundColor": "#e4e6e7", "overflow": "hidden", "display": "flex", "alignItems": "center", "justifyContent": "center", "position": "relative" }}>
                                     <label htmlFor="file" style={{ cursor: loading && "not-allowed" }}>
                                         {
-                                            !loading && (photo === "" ? <div style={{"fontSize":"100px","backgroundColor":"#e4e6e7","width":"100%","height":"100%","position":"absolute","top":"0","left":"0","color":"#aeb4b7","display":"flex","alignItems":"center","justifyContent":"center","cursor":"pointer"}}>
+                                            !loading && (photo === "" ? <div style={{ "fontSize": "100px", "backgroundColor": "#e4e6e7", "width": "100%", "height": "100%", "position": "absolute", "top": "0", "left": "0", "color": "#aeb4b7", "display": "flex", "alignItems": "center", "justifyContent": "center", "cursor": "pointer" }}>
                                                 {/* <i className="fa-solid fa-user"></i> */}
                                             </div> :
-                                                <img style={{"width":"100%","height":"auto","objectFit":"cover","zIndex":"1","cursor":"pointer"}} src={photo} alt="" />
+                                                <img style={{ "width": "100%", "height": "auto", "objectFit": "cover", "zIndex": "1", "cursor": "pointer" }} src={photo} alt="" />
                                             )
                                         }
                                         {
                                             loading &&
-                                            <div style={{"width":"100%","position":"absolute","height":"100%","top":"0","left":"0","display":"flex","alignItems":"center","justifyContent":"center"}} className="loader">
-                                                <img style={{ width: "30%","height":"auto","objectFit":"cover","zIndex":"1","cursor":"pointer" }} src="images/gif/starLoading.gif" alt="" />
+                                            <div style={{ "width": "100%", "position": "absolute", "height": "100%", "top": "0", "left": "0", "display": "flex", "alignItems": "center", "justifyContent": "center" }} className="loader">
+                                                <img style={{ width: "30%", "height": "auto", "objectFit": "cover", "zIndex": "1", "cursor": "pointer" }} src="images/gif/starLoading.gif" alt="" />
                                             </div>
                                         }
                                         <div className="uploadImg">Upload</div>
@@ -222,40 +221,41 @@ const CvDesign = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="row bottomBoxes">
-                            <div className="col-4 bgClr sideBar">
+                        <div style={{ display: "flex" }}>
+                            <div style={{ backgroundColor: "#2b3743" }} className="col-4 bgClr sideBar">
                                 {
                                     ((cvData.gender !== "") || (cvData.dob !== "") || (cvData.phone !== "") || (cvData.email !== "") || (cvData.website !== "") || (cvData.address !== "")) &&
                                     <div className="sideBarEachSection contactSection">
                                         {cvData.gender &&
-                                            <div className="eachContactUser"><i className="fa-solid fa-user"></i>{cvData.gender}</div>
+                                            <div className="eachContactUser" style={{ fontSize: "9px" }} ><img style={{ width: "15px", marginRight: "5px" }} src="images/cvLogos/1.webp" alt="" /> {cvData.gender}</div>
                                         }
                                         {cvData.dob &&
-                                            <div className="eachContactUser"><i className="fa-solid fa-calendar-days"></i>{(new Date(cvData.dob)).toDateString()}</div>
+                                            <div className="eachContactUser" style={{ fontSize: "9px" }} ><img style={{ width: "15px", marginRight: "5px" }} src="images/cvLogos/2.webp" alt="" />{(new Date(cvData.dob)).toDateString()}</div>
                                         }
                                         {cvData.phone &&
-                                            <div className="eachContactUser"><i className="fa-solid fa-phone"></i>{cvData.phone}</div>
+                                            <div className="eachContactUser" style={{ fontSize: "9px" }} ><img style={{ width: "15px", marginRight: "5px" }} src="images/cvLogos/3.webp" alt="" />{cvData.phone}</div>
                                         }
                                         {cvData.email &&
-                                            <div className="eachContactUser"><i className="fa-solid fa-envelope"></i>{cvData.email}</div>
+                                            <div className="eachContactUser" style={{ fontSize: "9px" }} ><img style={{ width: "15px", marginRight: "5px" }} src="images/cvLogos/4.webp" alt="" />{cvData.email}</div>
                                         }
                                         {cvData.website &&
-                                            <div className="eachContactUser"><i className="fa-solid fa-globe"></i>{cvData.website}</div>
+                                            <div className="eachContactUser" style={{ fontSize: "9px" }} ><img style={{ width: "15px", marginRight: "5px" }} src="images/cvLogos/5.webp" alt="" />{cvData.website}</div>
                                         }
                                         {cvData.address &&
-                                            <div className="eachContactUser"><i className="fa-solid fa-location-dot"></i>{cvData.address}</div>
+                                            <div className="eachContactUser" style={{ fontSize: "9px" }} ><img style={{ width: "15px", marginRight: "5px" }} src="images/cvLogos/6.webp" alt="" />{cvData.address}</div>
                                         }
                                     </div>
                                 }
                                 {
                                     cvData.skills.length >= 1 &&
                                     <div className="sideBarEachSection skillsSections">
-                                        <h5>SKILLS</h5>
+                                        <h5 style={{ fontWeight: "bolder", fontSize: "20px" }}>SKILLS</h5>
                                         <ul>
                                             {cvData.skills.map((v, i) => {
                                                 return (
-                                                    <li key={i}>{v.skillName}
-                                                        <p>{`- ${v.skillDesc}`}</p>
+                                                    <li style={{ fontSize: "12px", listStyle: "none" }} key={i}>
+                                                        <img style={{ width: "12px", marginRight: "5px" }} src="images/cvLogos/liststyle.png" alt="" />{v.skillName}
+                                                        <p style={{ fontSize: "9px" }}>{`- ${v.skillDesc}`}</p>
                                                     </li>
                                                 )
                                             })}
@@ -266,39 +266,39 @@ const CvDesign = () => {
                                 {
                                     cvData.awards &&
                                     <div className="sideBarEachSection honorsAndAwardsSection">
-                                        <h5>HONORS AND AWARDS</h5>
-                                        <p>{`- ${cvData.awards}`}</p>
+                                        <h5 style={{ fontWeight: "bolder", fontSize: "20px" }}>HONORS AND AWARDS</h5>
+                                        <p style={{ fontSize: "9px" }}>{`- ${cvData.awards}`}</p>
                                     </div>
                                 }
                                 {
                                     cvData.certifications &&
                                     <div className="sideBarEachSection honorsAndAwardsSection">
-                                        <h5>HONORS AND AWARDS</h5>
-                                        <p>{`- ${cvData.certifications}`}</p>
+                                        <h5 style={{ fontWeight: "bolder", fontSize: "20px" }}>Certifications</h5>
+                                        <p style={{ fontSize: "9px" }}>{`- ${cvData.certifications}`}</p>
                                     </div>
                                 }
                                 {
                                     cvData.interest &&
                                     <div className="sideBarEachSection certificationsSection">
-                                        <h5>INTERESTS</h5>
-                                        <p>{`- ${cvData.interest}`}</p>
+                                        <h5 style={{ fontWeight: "bolder", fontSize: "20px" }}>INTERESTS</h5>
+                                        <p style={{ fontSize: "9px" }}>{`- ${cvData.interest}`}</p>
                                     </div>
                                 }
                             </div>
-                            <div className="col-8 bgClr rightSideBarSection">
+                            <div style={{ backgroundColor: "#eee" }} className="col-8 bgClr rightSideBarSection">
                                 {cvData.aboutme &&
                                     <div className="eachRightSideBarSection">
-                                        <div className="headingSection">
-                                            <h5>About Me</h5>
+                                        <div style={{ padding: "5px 0px" }} className="headingSection">
+                                            <h4 style={{ fontWeight: "bolder", fontSize: "20px" }}>About Me</h4>
                                             <div className="line"></div>
                                         </div>
-                                        <p>{cvData.aboutme}</p>
+                                        <p className='text-justify' style={{ fontSize: "10px" }} >{cvData.aboutme}</p>
                                     </div>
                                 }
                                 {cvData.eduations.length !== 0 &&
                                     <div className="eachRightSideBarSection">
-                                        <div className="headingSection">
-                                            <h5>EDUCATION</h5>
+                                        <div style={{ padding: "5px 0px" }} className="headingSection">
+                                            <h4 style={{ fontWeight: "bolder", fontSize: "20px" }}>EDUCATION</h4>
                                             <div className="line"></div>
                                         </div>
                                         <ul>
@@ -306,14 +306,15 @@ const CvDesign = () => {
                                                 cvData.eduations.map((v, i) => {
                                                     return (
                                                         <li key={i}>
-                                                            <div>
-                                                                <div>
-                                                                    <i className="fa-solid fa-circle"></i> {v.qua}
+                                                            <div style={{ fontSize: "12px" }}>
+                                                                <div style={{ display: "flex", alignItems: "center" }}>
+                                                                    <img style={{ width: "12px", height: "12px", marginRight: "5px" }} src="images/cvLogos/liststyleb.png" alt="" />
+                                                                    {v.qua}
                                                                 </div>
                                                                 <div>{v.sDate !== "" && `${monthName[(new Date(v.sDate).getMonth())]} ${(new Date(v.sDate).getFullYear())}`} - {v.eDate !== "" && `${monthName[(new Date(v.eDate).getMonth())]} ${(new Date(v.eDate).getFullYear())}`}</div>
                                                             </div>
-                                                            <p>{v.ins}</p>
-                                                            <p>{v.marks}</p>
+                                                            <p style={{ fontSize: "10px" }}>{v.ins}</p>
+                                                            <p style={{ fontSize: "10px" }}>{v.marks}</p>
                                                         </li>
                                                     )
                                                 })}
@@ -322,8 +323,8 @@ const CvDesign = () => {
                                 }
                                 {cvData.workExp.length !== 0 &&
                                     <div className="eachRightSideBarSection">
-                                        <div className="headingSection">
-                                            <h5>WORK EXPERIENCE</h5>
+                                        <div style={{ padding: "5px 0px" }} className="headingSection">
+                                            <h4 style={{ fontWeight: "bolder", fontSize: "20px" }}>WORK EXPERIENCE</h4>
                                             <div className="line"></div>
                                         </div>
                                         <ul>
@@ -331,14 +332,15 @@ const CvDesign = () => {
                                                 cvData.workExp.map((v, i) => {
                                                     return (
                                                         <li key={i}>
-                                                            <div>
-                                                                <div>
-                                                                    <i className="fa-solid fa-circle"></i> {v.workCom}
+                                                            <div style={{ fontSize: "12px" }}>
+                                                                <div style={{ display: "flex", alignItems: "center" }}>
+                                                                    <img style={{ width: "12px", height: "12px", marginRight: "5px" }} src="images/cvLogos/liststyleb.png" alt="" />
+                                                                    {v.workCom}
                                                                 </div>
                                                                 <div>{v.workSDate !== "" && `${monthName[(new Date(v.workSDate).getMonth())]} ${(new Date(v.workSDate).getFullYear())}`} - {v.workEDate !== "" && `${monthName[(new Date(v.workEDate).getMonth())]} ${(new Date(v.workEDate).getFullYear())}`}</div>
                                                             </div>
-                                                            <p className='desigName'>{v.workDesig}</p>
-                                                            <p>{`- ${v.workDesc}`}</p>
+                                                            <p style={{ fontSize: "10px" }} className='desigName'>{v.workDesig}</p>
+                                                            <p style={{ fontSize: "10px" }}>{`- ${v.workDesc}`}</p>
                                                         </li>
                                                     )
                                                 })}
@@ -347,8 +349,8 @@ const CvDesign = () => {
                                 }
                                 {cvData.activities.length !== 0 &&
                                     <div className="eachRightSideBarSection">
-                                        <div className="headingSection">
-                                            <h5>ACTIVITIES</h5>
+                                        <div style={{ padding: "5px 0px" }} className="headingSection">
+                                            <h4 style={{ fontWeight: "bolder", fontSize: "20px" }}>ACTIVITIES</h4>
                                             <div className="line"></div>
                                         </div>
                                         <ul>
@@ -356,14 +358,15 @@ const CvDesign = () => {
                                                 cvData.activities.map((v, i) => {
                                                     return (
                                                         <li key={i}>
-                                                            <div>
-                                                                <div>
-                                                                    <i className="fa-solid fa-circle"></i> {v.activity}
+                                                            <div style={{ fontSize: "12px" }}>
+                                                                <div style={{ display: "flex", alignItems: "center" }}>
+                                                                    <img style={{ width: "12px", height: "12px", marginRight: "5px" }} src="images/cvLogos/liststyleb.png" alt="" />
+                                                                    {v.activity}
                                                                 </div>
                                                                 <div>{v.actSDate !== "" && `${monthName[(new Date(v.actSDate).getMonth())]} ${(new Date(v.actSDate).getFullYear())}`} - {v.actEDate !== "" && `${monthName[(new Date(v.actEDate).getMonth())]} ${(new Date(v.actEDate).getFullYear())}`}</div>
                                                             </div>
-                                                            <p className='desigName'>{v.actRole}</p>
-                                                            <p>{`- ${v.actDesc}`}</p>
+                                                            <p style={{ fontSize: "10px" }} className='desigName'>{v.actRole}</p>
+                                                            <p style={{ fontSize: "10px" }}>{`- ${v.actDesc}`}</p>
                                                         </li>
                                                     )
                                                 })
@@ -375,8 +378,9 @@ const CvDesign = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="actualCVbuilder">
-                    <div className="col-4 inputsSection">
+                    <div className="col-3 inputsSection">
                         <div className="eachInfoSection personalInfoSection">
                             <div className="eachInfoSectionHeader">
                                 <h4>Personal Info</h4>
@@ -641,9 +645,7 @@ const CvDesign = () => {
                             </Expand>
                         </div>
                     </div>
-
-
-                    <div className="col-8 liveViewSection">
+                    <div className="col-9 liveViewSection">
                         <div className="liveViewSectionInner">
                             <div className="row topboxes">
                                 <div className="col-4 bgClr"></div>
@@ -733,7 +735,7 @@ const CvDesign = () => {
                                     {
                                         cvData.certifications &&
                                         <div className="sideBarEachSection honorsAndAwardsSection">
-                                            <h5>HONORS AND AWARDS</h5>
+                                            <h5>Certifications</h5>
                                             <p>{`- ${cvData.certifications}`}</p>
                                         </div>
                                     }
@@ -835,6 +837,9 @@ const CvDesign = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="cvDonwloadBtnDiv">
+                    <button onClick={generatePdf}>Export PDF</button>
                 </div>
             </div>
             <ProsAbout />
