@@ -23,7 +23,7 @@ const AdminPenel = () => {
             <div className="NavBar">
                 <nav>
                     <div className="logo">
-                        <Link to="/"><img className="width" src={logo} alt='' /></Link>
+                        <Link to="/admin/home"><img className="width" src={logo} alt='' /></Link>
                     </div>
                     <div className="barsDiv" onClick={navLinksToggle}>
                         <div className="bars">

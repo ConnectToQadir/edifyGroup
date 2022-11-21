@@ -3,7 +3,7 @@ import './AdminHome.css'
 const AdminHome = () => {
   return (
     <div>
-        AdminHome
+        Coming Soon! With Stats Related You
     </div>
   )
 }

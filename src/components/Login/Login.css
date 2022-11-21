@@ -15,6 +15,7 @@
     border-radius: 50%;
     background-color: #fff;
     border: .5px solid #ccc;
+    box-shadow: 0px 9px 17px -4px rgb(0 0 0 / 30%);
 }
 
 .loginForm .logo img{
@@ -36,18 +37,20 @@
 .loginForm form h1{
     font-size: calc(12px + 1vw);
     color: #1553a1;
-    font-family: var(--headFont);
+    /* font-family: var(--headFont); */
+    font-family:CaustenBold;
 }
 
 .loginForm form input{
-    margin-bottom: 15px;
     padding:3px 10px;
     border:1px solid transparent;
+    font-size: 15px;
+    font-family: Causten;
+    letter-spacing: .5px;
 }
 
 .loginForm form input:focus{
     outline: none;
-    border: .5px solid #ccc;
 }
 
 .loginForm form .btnDiv{
@@ -57,11 +60,16 @@
 
 .loginForm form .btnDiv button{
     padding:4px 10px;
-    border:none;
     background-color: #1553a1;
     color:#fff;
     font-weight: 500;
     transition: all .5s ease;
+    font-size: 14px;
+    margin-top: 10px;
+    border:1px solid #1553a1;
+    font-family: Causten;
+    padding-bottom: 2px;
+    letter-spacing: 1px;
 }
 
 .loginForm form .btnDiv button:focus{
@@ -69,6 +77,18 @@
 }
 
 .loginForm form .btnDiv button:hover{
-    color: #fff;
-    background-color:#1553a1;
+    background-color: #0069e9;
+}
+
+.eachLingformInput{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding:3px 0px;
+}
+
+.eachLingformInput .fa-solid{
+    padding-left: 10px;
+    color:rgb(155, 155, 155);
 }

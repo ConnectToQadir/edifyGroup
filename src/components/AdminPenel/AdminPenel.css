@@ -1,15 +1,7 @@
-
-
-.userIconAdmin .fa-solid{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--blueMain);
-    color:#fff;
+.userIconAdmin{
+    padding-left: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin:0px 10px;
 }
 
 .userIconAdmin h5{
@@ -32,7 +24,23 @@
     border:1px solid rgba(20 ,86 ,163 ,30%);
     margin-right: 7px;
     color:rgb(68, 68, 68);
-    font-size: 20px;
+    font-size: 18px;
+    user-select: none;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.userIconAdmin .imgDiv h4::before{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(8, 219, 8);
+    /* border:1px solid rgb(3, 119, 3); */
+    outline: 2px solid #fff;
+    top:0;
+    right: 1px;
 }
 
 .logoutLink a{

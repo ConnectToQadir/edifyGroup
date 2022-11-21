@@ -21,8 +21,25 @@
     text-align: center;
 }
 
+.Enquiries .btn-success{
+    border: none;
+    padding:3px 8px;
+    margin-top: 10px;
+    background-color: var(--blueMain);
+    font-size: 14px;
+}
+
+.Enquiries .btn-success .fa-solid{
+    margin-right: 5px;
+}
+
+.Enquiries .btn-close{
+    background-color: #fff;
+    border: none;
+}
+
 .EachDataRow:hover{
-    outline: 2px solid #d2d3ed;
+    outline: 2px solid #cccdf0;
 }
 
 .EachDataRow td {
@@ -40,7 +57,7 @@
 .enquiriesTable{
     overflow: scroll;
     padding: 20px 0px;
-    max-height: 60vh;
+    max-height: 50vh;
 }
 
 .enquiriesTable::-webkit-scrollbar {
@@ -71,7 +88,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px;
+    margin-bottom: 20px;
+}
+
+.enquiriesHeader span{
+    display:grid;
+    place-items: center;
 }
 
 .enquiriesHeader h3 {
@@ -80,57 +102,52 @@
     margin-right: 10px;
 }
 
-.enquiriesHeader button {
-    padding: 3px 10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
+.enquiriesHeader > button{
+    border:none;
+}
+
+.enquiriesHeader .fa-file-excel {
     background-color: transparent;
-    transition: all .5s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .5s ease;
-    background-color: #fff;
     font-size: 20px;
-    cursor: auto;
 }
 
 .enquiriesHeader button:focus {
     outline: none;
 }
 
-.enquiriesHeader button:hover {
-    color: green;
-}
-
-.actionsIcons {
+.actionsIcons{
     text-align: center;
     color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .actionsIcons .fa-solid{
     font-size: 14px;
-    padding:4px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 10%);
     border-radius: 3px;
     color:#555;
     border:1px solid transparent;
+    margin:0px 2px;
 }
 
 .actionsIcons a {
     text-decoration: none;
 }
 
-.actionsIcons .fa-rectangle-list {
-    margin-right: 5px;
-}
-
 .actionsIcons .fa-rectangle-list:hover {
     color: rgb(2, 93, 179);
     background-color:rgba(2, 93, 179, 15%) ;
-    border:1px solid rgba(2, 93, 179, 25%) ;
+    border:1px solid rgb(2, 93, 179);
     cursor: pointer;
 }
 
@@ -138,7 +155,7 @@
     color: rgb(179, 2, 2);
     cursor: pointer;
     background-color:rgba(179, 2, 2, 15%) ;
-    border: 1px solid rgba(179, 2, 2, 25%);
+    border: 1px solid rgb(179, 2, 2);
 }
 
 .actionsIcons .updateIcon{
@@ -146,9 +163,16 @@
 }
 
 .actionsIcons .updateIcon:hover{
-    color:#29abe3;
+    color:#164ad6;
     background-color: #e6f7ff;
-    border: 1px solid #9ce0ff;
+    border: 1px solid #164ad6;
+}
+
+.actionsIcons .fa-comment:hover{
+    color:green;
+    background-color: rgba(0, 200, 0, 20%);
+    border:1px solid green;
+    cursor: pointer;
 }
 
 .Applications {
@@ -210,7 +234,7 @@
 }
 
 .toggleEnquiryTypeBtn .toggleBtnOuterDiv{
-    border:1px solid #9ac9ff;
+    border:1px solid gray;
     cursor: pointer;
     width: 44px;
     height: 24px;
@@ -224,9 +248,8 @@
     height: 20px;
     display: flex;
     align-items: center;
-    color:#fff;
+    color:#000;
     justify-content: center;
-    background-color:#1456a3;
     position: absolute;
     top:50%;
     transform: translateY(-50%);
@@ -244,5 +267,113 @@
 
 
 .ApplicationsTable .imgDiv img{
-    width: 50px;
+    width: 30px;
+}
+
+
+.applicationsPaginationsSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.innerPaginate{
+    display: flex;
+    align-items: center;
+    padding:20px 0px;
+}
+
+.innerPaginate p{
+    margin-bottom: 0;
+    padding:0px 10px;
+}
+
+.innerPaginate button{
+    width: 30px;
+    height: 30px;
+    border:1px solid rgba(0, 0, 0, 20%);
+    color:rgba(0, 0, 0, 70%);
+    display: grid;
+    place-items:center;
+}
+
+.innerPaginate button:disabled{
+    cursor:default;
+    opacity: .9;
+}
+
+.filterAndSearchSection{
+    display: flex;
+}
+
+.filterAndSearchSection .fa-solid{
+    padding:0px 5px;
+}
+
+.filterAndSearchSection input{
+    height: 100%;
+    padding:0px 5px;
+    border:1px solid gray;
+}
+
+.filterAndSearchSection select{
+    height: 100%;
+    padding-left: 5px;
+    padding-right: 3px;
+    border:1px solid gray;
+}
+
+.filterAndSearchSection select:focus ,.filterAndSearchSection button:focus ,.filterAndSearchSection input:focus{
+    outline: none;
+}
+
+.filterAndSearchSection button{
+    border:1px solid gray;
+    height: 100%;
+    margin-left: 5px;
+}
+
+.filterSection{
+    padding:5px 10px;
+}
+
+.searchSection{
+    padding:5px 10px;
+}
+
+.eachComment{
+}
+
+.eachComment .Comment{
+    padding:5px 10px;
+    font-size: 14px;
+    background-color: rgba(200, 205, 255,30%);
+    border-radius: 0px 10px 0px 10px;
+    border: 1px solid rgba(200, 205, 255,100%);
+    text-align: justify;
+}
+
+.eachComment .name{
+    display: flex;
+}
+
+.eachComment .dataDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eachComment .dataDiv .innerDate{
+    background-color: rgba(200, 205, 255,100%);
+    padding:1px 10px;
+    border-radius: 0px 0px 0px 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.eachComment .name .inner{
+    background-color: rgba(200, 205, 255,90%);
+    padding:1px 10px;
+    border-radius: 0px 10px 0px 0px;
+    font-size: 12px;
+    font-weight: 600;
 }

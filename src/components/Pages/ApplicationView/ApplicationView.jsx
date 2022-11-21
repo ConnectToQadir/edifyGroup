@@ -101,10 +101,10 @@ const ApplicationView = () => {
     }
 
     return (
-        <>
-            <button onClick={generatePdf}>Download PDF</button>
+        <div className='ApplicationView'>
             <form className='Apply ApplicationView'>
-                <h2 className='flh' style={{ marginBottom: "30px", color: "#000" }}>Information <span style={{ color: "var(--blueMain)" }}>Application</span></h2>
+                <h2 className='flh' style={{ marginBottom: "10px", color: "#000" }}>Information <span style={{ color: "var(--blueMain)" }}>Application</span></h2>
+            <span onClick={generatePdf}>Download PDF</span>
                 <div ref={applicationRef} style={{ border: "0px", maxWidth: "570px" }} className="allSections">
 
                     <div className="eachSection">
@@ -305,7 +305,7 @@ const ApplicationView = () => {
                     </div>
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 

@@ -1,6 +1,6 @@
 import './App.css';
-import Home from './components/Pages/Home/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/Pages/Home/Home';
 import Contact from './components/Pages/Contact/Contact';
 import Services from './components/Pages/Services/Services';
 import Updates from './components/Pages/Updates/Updates';
@@ -64,7 +64,6 @@ function App() {
           <Route path='/UK' element={<UK />} />
           <Route path='/CvDesign' element={<CvDesign />} />
           <Route path='/Sweden' element={<Sweden />} />
-          <Route path='/*' element={<Home />} />
           <Route path='/Canada' element={<Canada />} />
           <Route path='/Immigration' element={<Immigration />} />
           <Route path='/Kyrgyzstan' element={<Kyrgyzstan />} />
@@ -73,7 +72,7 @@ function App() {
             <Route path='updates' element={user?.desig === "Developer" || user?.desig === "Admin" ? <AdminUpdates /> : <AdminHome /> } />
             <Route path='blogs' element={user?.desig === "Developer" || user?.desig === "Admin" ? <AdminBlogs /> : <AdminHome /> } />
             <Route path='home' element={<AdminHome />} />
-            <Route path='campusEnquiryForm' element={user?.desig === "Developer" || user?.desig === "Admin" || user?.desig === "Receptionist" ? <AdminReceptionForm /> : <AdminHome />} />
+            <Route path='campusEnquiryForm' element={<AdminReceptionForm/>}  />
             <Route path='reviews' element={user?.desig === "Developer" || user?.desig === "Admin" ? <AdminReviews /> : <AdminHome />} />
             <Route path='applications' element={<Applications />} />
             <Route path='applications/apply/:id' element={<ApplicationView />} />
