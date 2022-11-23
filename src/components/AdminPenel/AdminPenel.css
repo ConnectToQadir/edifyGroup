@@ -14,6 +14,10 @@
     line-height: 15px;
 }
 
+.userIconAdmin .imgDiv{
+    position: relative;
+}
+
 .userIconAdmin .imgDiv h4{
     width:40px;
     height: 40px;
@@ -26,21 +30,19 @@
     color:rgb(68, 68, 68);
     font-size: 18px;
     user-select: none;
-    position: relative;
     margin-bottom: 0px;
 }
 
-.userIconAdmin .imgDiv h4::before{
+.userIconAdmin .imgDiv .onlineSignal{
     position: absolute;
-    content: "";
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgb(8, 219, 8);
-    /* border:1px solid rgb(3, 119, 3); */
     outline: 2px solid #fff;
     top:0;
-    right: 1px;
+    right: 7px;
+    display: grid;
+    place-items: center;
 }
 
 .logoutLink a{

@@ -29,7 +29,7 @@ const NavBar = () => {
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/Services">Services</NavLink></li>
                         <div className="dropdown">
-                            <button className="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Destinations
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -47,7 +47,7 @@ const NavBar = () => {
                         <li><NavLink to="/FAQ">FAQ's</NavLink></li>
                         <li><NavLink to="/About">About</NavLink></li>
                         <div className="dropdown">
-                            <button className="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button className="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Branches
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">

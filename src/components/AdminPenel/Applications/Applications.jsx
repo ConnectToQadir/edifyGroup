@@ -5,9 +5,32 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { DownloadTableExcel } from 'react-export-table-to-excel';
 import { Context } from '../../../context/Context'
-import loadingGif from '../../../assets/gif/loading.gif'
 
 const Applications = () => {
+
+    // Checking Internet Connection Start ===========================>
+
+    const [isOnline, setIsOnline] = useState(navigator.onLine);
+    useEffect(() => {
+        // Update network status
+        const handleStatusChange = () => {
+            setIsOnline(navigator.onLine);
+        };
+
+        // Listen to the online status
+        window.addEventListener('online', handleStatusChange);
+
+        // Listen to the offline status
+        window.addEventListener('offline', handleStatusChange);
+
+        // Specify how to clean up after this effect for performance improvment
+        return () => {
+            window.removeEventListener('online', handleStatusChange);
+            window.removeEventListener('offline', handleStatusChange);
+        };
+    }, [isOnline]);
+
+    // Checking Internet Connection End   ===========================>
 
     const { user } = useContext(Context);
     const [allApplications, setAllApplications] = useState([]);
@@ -130,14 +153,13 @@ const Applications = () => {
         }
     }
 
-    console.log(filterAndSearchData.searchedTerm)
 
     // Fetching All Applications
     useEffect(() => {
         try {
             const fetchAllCampusApplications = async () => {
                 setPageLoading(true)
-                const res = await axios.get(`https://edifygroup.herokuapp.com/api/campusApply?page=${currentPage}${user.desig === "Counselor" ? `&refTo=${user.username}` : ""}${filterAndSearchData.filteredTerm ? `&${filterAndSearchData.filterBy}=${filterAndSearchData.filteredTerm}` : ""}${filterAndSearchData.searchedTerm ? `&${filterAndSearchData.searchBy}=${filterAndSearchData.searchedTerm}` : ""}`)
+                const res = await axios.get(`https://edifygroup.herokuapp.com/api/campusApply?page=${currentPage}${user.desig === "Counselor" ? `&refTo=${user.username}` : ""}${filterAndSearchData.filteredTerm ? `&${filterAndSearchData.filterBy}=${filterAndSearchData.filteredTerm}` : ""}${filterAndSearchData.searchedTerm ? `&${filterAndSearchData.searchBy}=${filterAndSearchData.searchedTerm}` : ""}${user.username.split(" ")[0] === "Lhr" ? "&branch=Lhr" : ""}${user.username.split(" ")[0] === "Fsd" ? "&branch=Fsd" : ""}`)
                 setAllCampusApplications(res.data.data)
                 setTRecords(res.data.count)
                 setPageLoading(false)
@@ -156,7 +178,7 @@ const Applications = () => {
         } catch (error) {
             console.log("error")
         }
-    }, [commentSubmitting, currentPage, filterAndSearchData.filteredTerm, filterAndSearchData.searchedTerm, toggleEnquiries, deletingApplication, refering])
+    }, [isOnline,commentSubmitting, currentPage, filterAndSearchData.filteredTerm, filterAndSearchData.searchedTerm, toggleEnquiries, deletingApplication, refering])
 
     // Deleting An Applications
     const deleteApplication = async (id) => {
@@ -257,7 +279,7 @@ const Applications = () => {
                         <></> :
                         <div className="toggleEnquiryTypeBtn">
                             <div onClick={() => setToggleEnquiries(!toggleEnquiries)} className="toggleBtnOuterDiv">
-                                <div style={{ left: toggleEnquiries !== true ? "0%" : "50%" }} className="toggleNode">{toggleEnquiries !== true ? <i className="fa-solid fa-globe"></i> : <i className="fa-solid fa-house"></i>}</div>
+                                <div title='Switch Between Web and Campus Enquiries' style={{ left: toggleEnquiries !== true ? "0%" : "50%" }} className="toggleNode">{toggleEnquiries !== true ? <i className="fa-solid fa-globe"></i> : <i className="fa-solid fa-house"></i>}</div>
                             </div>
                         </div>
                     }
@@ -270,7 +292,7 @@ const Applications = () => {
                             <i className="fa-solid fa-filter"></i>
                             <select onChange={filterAndSearchDataChageHandler} value={filterAndSearchData.filterBy} name="filterBy" id="">
                                 <option value="">Select</option>
-                                {(toggleEnquiries && (user.desig !== "Counselor")) && <option value="branch">Branch</option>}
+                                {(toggleEnquiries && ((user.desig !== "Counselor") && (user.desig !== "Receptionist"))) && <option value="branch">Branch</option>}
                                 <option value="hereAbout">Source</option>
                                 {user.desig !== "Counselor" && <option value="refTo">Counselor</option>}
                                 <option value="pCountries">Countries</option>
@@ -339,7 +361,7 @@ const Applications = () => {
 
                                 </select>
                             }
-                            <button onClick={resetFilterAndSearchData} type='reset'><i className="fa-solid fa-eraser"></i></button>
+                            <button onClick={resetFilterAndSearchData} title="Remove Filters" type='reset'><i className="fa-solid fa-eraser"></i></button>
                         </div>
                         <div className="searchSection">
                             <i className="fa-solid fa-magnifying-glass"></i>
@@ -360,7 +382,7 @@ const Applications = () => {
                         sheet="users"
                         currentTableRef={tableRef.current}
                     >
-                        <button style={{ border: "none" }} data-aos="fade-up" data-aos-duration="1200"><i className="fa-solid fa-file-excel"></i></button>
+                        <button title='Export Into Excel Sheet' style={{ border: "none" }} data-aos="fade-up" data-aos-duration="1200"><i className="fa-solid fa-file-excel"></i></button>
                     </DownloadTableExcel>
                 </div>
             </div>
@@ -435,7 +457,7 @@ const Applications = () => {
                                                         )
                                                     }
                                                 </td>
-                                                <td style={{ padding: "3px 10px" }} className='actionsIcons'> <i onClick={() => targetedRemarks(v.rem, v._id)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" className="fa-solid fa-comment"></i> <Link to={`apply/${v._id}`}><i className="fa-solid fa-rectangle-list"></i></Link> {(user.desig === "admin" || user.desig === "Developer") && <i onClick={() => deleteApplication(v._id)} className="fa-solid fa-trash"></i>}</td>
+                                                <td style={{ padding: "5px 10px",paddingTop:"10px" }} className='actionsIcons'> <span><i onClick={() => targetedRemarks(v.rem, v._id)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" className="fa-solid fa-comment"></i>{v.rem.length ? <span>{v.rem.length}</span> : ""}</span>  <Link to={`apply/${v._id}`}><i className="fa-solid fa-rectangle-list"></i></Link> {(user.desig === "Admin" || user.desig === "Developer") && <i onClick={() => deleteApplication(v._id)} className="fa-solid fa-trash"></i>}</td>
                                             </tr>
                                         )
                                     })
@@ -484,7 +506,7 @@ const Applications = () => {
                                                 <td>{v.pCountries.toString()}</td>
                                                 <td>{v.refTo}</td>
                                                 <td>{v.hereAbout}</td>
-                                                <td className='actionsIcons'> <i data-bs-toggle="modal" onClick={() => targetedRemarks(v.rem, v._id)} data-bs-target="#exampleModal" data-bs-whatever="@mdo" className="fa-solid fa-comment"></i> {(user.desig === "Admin" || user.desig === "Developer" || user.desig === "Receptionist") && <Link to="/admin/campusEnquiryForm" state={v && v} ><i className="fa-solid updateIcon fa-pen-to-square"></i></Link>}  {(user.desig === "Admin" || user.desig === "Developer") && <i onClick={() => deleteApplication(v?._id)} className="fa-solid fa-trash"></i>}</td>
+                                                <td style={{ padding: "5px 10px",paddingTop:"15px" }} className='actionsIcons'> <span title='View & Add Comments' ><i onClick={() => targetedRemarks(v.rem, v._id)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" className="fa-solid fa-comment"></i>{v.rem.length ? <span>{v.rem.length}</span> : ""}</span> {(user.desig === "Admin" || user.desig === "Developer" || user.desig === "Receptionist") && <Link to="/admin/campusEnquiryForm" state={v && v} ><i title='Edit' className="fa-solid updateIcon fa-pen-to-square"></i></Link>}  {(user.desig === "Admin" || user.desig === "Developer") && <i title='Delete' onClick={() => deleteApplication(v?._id)} className="fa-solid fa-trash"></i>}</td>
                                             </tr>
                                         )
                                     })
@@ -498,9 +520,9 @@ const Applications = () => {
                     <p>{(currentPage - 1) * 50 + 1} <b>To</b> {(currentPage - 1) * 50 + (toggleEnquiries ? allCampusApplications.length : allApplications.length)}</p>
                 </div>
                 <div className="innerPaginate">
-                    <button disabled={pageLoading || (currentPage === 1)} onClick={() => setCurrentPage(currentPage - 1)} >{pageLoading ? <i className="fa-solid fa-spinner fa-spin-pulse"></i> : <i className="fa-solid fa-angle-left"></i>}</button>
+                    <button title='Go To Previous Page' disabled={pageLoading || (currentPage === 1)} onClick={() => setCurrentPage(currentPage - 1)} >{pageLoading ? <i className="fa-solid fa-spinner fa-spin-pulse"></i> : <i className="fa-solid fa-angle-left"></i>}</button>
                     <p><b>{currentPage}</b> of <b>{JSON.stringify(Math.ceil(tRecords / 50))}</b></p>
-                    <button disabled={pageLoading || (Math.ceil(tRecords / 50) === currentPage)} onClick={() => setCurrentPage(currentPage + 1)} > {pageLoading ? <i className="fa-solid fa-spinner fa-spin-pulse"></i> : <i className="fa-solid fa-angle-right"></i>} </button>
+                    <button title='Go To Next Page' disabled={pageLoading || (Math.ceil(tRecords / 50) === currentPage)} onClick={() => setCurrentPage(currentPage + 1)} > {pageLoading ? <i className="fa-solid fa-spinner fa-spin-pulse"></i> : <i className="fa-solid fa-angle-right"></i>} </button>
                 </div>
                 <div className="totalDiv">
                     <p><b>Total : </b>{tRecords}</p>
