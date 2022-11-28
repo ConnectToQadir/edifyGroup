@@ -63,6 +63,7 @@ const AdminPenel = () => {
                     <div className="navLinks" style={{ display: mobNavLinks }}>
                         <ul>
                             <li><NavLink to="home">Home</NavLink></li>
+                            {(user.desig === "Admin" || user.desig === "Developer") && <li><NavLink to="users">Manage Users</NavLink></li>}
                             {(user.desig === "Admin" || user.desig === "Developer") && <li><NavLink to="blogs">Blogs</NavLink></li>}
                             {(user.desig === "Admin" || user.desig === "Developer") && <li><NavLink to="reviews">Reviews</NavLink></li>}
                             <li><NavLink to="applications">Enquiries</NavLink></li>

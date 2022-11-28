@@ -32,6 +32,23 @@ const Applications = () => {
 
     // Checking Internet Connection End   ===========================>
 
+
+
+
+    // Fetch Counselors From DB
+    const [counsolers, setCounsolers] = useState([])
+    useEffect(() => {
+        try {
+            const fetchCounsolers = async () => {
+                let response = await axios.get("https://edifygroup.herokuapp.com/api/auth/allUsers?desig=Counselor")
+                setCounsolers(response.data.data)
+            }
+            fetchCounsolers()
+        } catch (error) {
+            console.log(error)
+        }
+    }, [])
+
     const { user } = useContext(Context);
     const [allApplications, setAllApplications] = useState([]);
     const [allCampusApplications, setAllCampusApplications] = useState([]);
@@ -147,7 +164,7 @@ const Applications = () => {
             setRefering(true)
             setReferingStudentId(id)
             setPageLoading(true)
-            const res = await axios.put(`https://edifygroup.herokuapp.com/api/apply/${id}`, { conStatus: "Referred", refTo: cName })
+            await axios.put(`https://edifygroup.herokuapp.com/api/apply/${id}`, { conStatus: "Referred", refTo: cName })
         } catch (error) {
             alert(error)
         }
@@ -159,14 +176,14 @@ const Applications = () => {
         try {
             const fetchAllCampusApplications = async () => {
                 setPageLoading(true)
-                const res = await axios.get(`https://edifygroup.herokuapp.com/api/campusApply?page=${currentPage}${user.desig === "Counselor" ? `&refTo=${user.username}` : ""}${filterAndSearchData.filteredTerm ? `&${filterAndSearchData.filterBy}=${filterAndSearchData.filteredTerm}` : ""}${filterAndSearchData.searchedTerm ? `&${filterAndSearchData.searchBy}=${filterAndSearchData.searchedTerm}` : ""}${user.username.split(" ")[0] === "Lhr" ? "&branch=Lhr" : ""}${user.username.split(" ")[0] === "Fsd" ? "&branch=Fsd" : ""}`)
+                const res = await axios.get(`https://edifygroup.herokuapp.com/api/campusApply?page=${currentPage}${user.desig === "Counselor" ? `&refTo=${user.userCode}` : ""}${filterAndSearchData.filteredTerm ? `&${filterAndSearchData.filterBy}=${filterAndSearchData.filteredTerm}` : ""}${filterAndSearchData.searchedTerm ? `&${filterAndSearchData.searchBy}=${filterAndSearchData.searchedTerm}` : ""}${user.username.split(" ")[0] === "Lhr" ? "&branch=Lhr" : ""}${user.username.split(" ")[0] === "Fsd" ? "&branch=Fsd" : ""}`)
                 setAllCampusApplications(res.data.data)
                 setTRecords(res.data.count)
                 setPageLoading(false)
             }
             const fetchWebApplications = async () => {
                 setPageLoading(true)
-                const res = await axios.get(`https://edifygroup.herokuapp.com/api/apply?page=${currentPage}${user.desig === "Counselor" ? `&refTo=${user.username}` : ""}${filterAndSearchData.filteredTerm ? `&${filterAndSearchData.filterBy}=${filterAndSearchData.filteredTerm}` : ""}${filterAndSearchData.searchedTerm ? `&${filterAndSearchData.searchBy}=${filterAndSearchData.searchedTerm}` : ""}`)
+                const res = await axios.get(`https://edifygroup.herokuapp.com/api/apply?page=${currentPage}${user.desig === "Counselor" ? `&refTo=${user.userCode}` : ""}${filterAndSearchData.filteredTerm ? `&${filterAndSearchData.filterBy}=${filterAndSearchData.filteredTerm}` : ""}${filterAndSearchData.searchedTerm ? `&${filterAndSearchData.searchBy}=${filterAndSearchData.searchedTerm}` : ""}`)
                 setAllApplications(res.data.data)
                 setTRecords(res.data.count)
                 setPageLoading(false)
@@ -178,7 +195,7 @@ const Applications = () => {
         } catch (error) {
             console.log("error")
         }
-    }, [isOnline,commentSubmitting, currentPage, filterAndSearchData.filteredTerm, filterAndSearchData.searchedTerm, toggleEnquiries, deletingApplication, refering])
+    }, [isOnline, commentSubmitting, currentPage, filterAndSearchData.filteredTerm, filterAndSearchData.searchedTerm, toggleEnquiries, deletingApplication, refering])
 
     // Deleting An Applications
     const deleteApplication = async (id) => {
@@ -215,15 +232,6 @@ const Applications = () => {
         var cYear = new Date(Date.now()).getFullYear();
         var age = cYear - year;
         return age
-    }
-
-    // titleCase Conversion Function
-    function titleCase(str) {
-        var splitStr = str.toLowerCase().split(' ');
-        for (var i = 0; i < splitStr.length; i++) {
-            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-        }
-        return splitStr.join(' ');
     }
 
     return (
@@ -311,19 +319,14 @@ const Applications = () => {
                                     {
                                         filterAndSearchData.filterBy === "refTo" && <>
                                             <option value="">Select Counsellor</option>
-                                            <option value="M. Azeem Qasim">M. Azeem Qasim</option>
-                                            <option value="Syed M. Nouman">Syed M. Nouman</option>
-                                            <option value="M. Tariq">M. Tariq</option>
-                                            <option value="Junaid Sohail">Junaid Sohail</option>
-                                            <option value="Amaima Iftikhar">Amaima Iftikhar</option>
-                                            <option value="Nasir Raza">Nasir Raza</option>
-                                            <option value="Marwa Yasin">Marwa Yasin</option>
-                                            <option value="M. Bilal">M. Bilal</option>
-                                            <option value="Mehreen Tiwana">Mehreen Tiwana</option>
-                                            <option value="M. Azhar">M. Azhar</option>
-                                            <option value="Ghazna Sajid">Ghazna Sajid</option>
-                                            <option value="Asma Alam">Asma Alam</option>
-                                            <option value="Zuha Sadiq">Zuha Sadiq</option>
+                                            {
+                                                counsolers.map((v, i) => {
+                                                    return (
+
+                                                        <option key={i} value={`${v.userCode}`}>{v.username}</option>
+                                                    )
+                                                })
+                                            }
                                         </>
                                     }
 
@@ -439,25 +442,25 @@ const Applications = () => {
                                                 <td className='text-center'>
                                                     {
 
-                                                        !(v.refTo === "") ? v.refTo : (
+                                                        !(v.refTo === "") ? counsolers.filter(i=>i.userCode === v.refTo)[0]?.username : (
                                                             (v._id === referingStudentId) ? <i className="fa-solid fa-spinner fa-spin-pulse"></i> :
                                                                 <select className='applicationSelect' name="refTo" onChange={(e) => {
                                                                     refToChangeHandler(v._id, e.target.value)
                                                                 }} value={v.refTo}>
-                                                                    <option value="">Select Counselor</option>
-                                                                    <option value="Junaid Sohail">Junaid Sohail</option>
-                                                                    <option value="Amaima Iftikhar">Amaima Iftikhar</option>
-                                                                    <option value="Nasir Raza">Nasir Raza</option>
-                                                                    <option value="Syed Nouman Shah">Syed Nouman Shah</option>
-                                                                    <option value="Marwa Yasin">Marwa Yasin</option>
-                                                                    <option value="Mehreen Tiwana">Mehreen Tiwana</option>
-                                                                    <option value="Muhammad Bilal">Muhammad Bilal</option>
-                                                                    <option value="Muhammad Azhar">Muhammad Azhar</option>
+                                                                    <option value="">Select Counsellor</option>
+                                                                    {
+                                                                        counsolers.map((v, i) => {
+                                                                            return (
+
+                                                                                <option key={i} value={`${v.userCode}`}>{v.username}</option>
+                                                                            )
+                                                                        })
+                                                                    }
                                                                 </select>
                                                         )
                                                     }
                                                 </td>
-                                                <td style={{ padding: "5px 10px",paddingTop:"10px" }} className='actionsIcons'> <span><i onClick={() => targetedRemarks(v.rem, v._id)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" className="fa-solid fa-comment"></i>{v.rem.length ? <span>{v.rem.length}</span> : ""}</span>  <Link to={`apply/${v._id}`}><i className="fa-solid fa-rectangle-list"></i></Link> {(user.desig === "Admin" || user.desig === "Developer") && <i onClick={() => deleteApplication(v._id)} className="fa-solid fa-trash"></i>}</td>
+                                                <td style={{ padding: "5px 10px", paddingTop: "10px" }} className='actionsIcons'> <span><i onClick={() => targetedRemarks(v.rem, v._id)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" className="fa-solid fa-comment"></i>{v.rem.length ? <span>{v.rem.length}</span> : ""}</span>  <Link to={`apply/${v._id}`}><i className="fa-solid fa-rectangle-list"></i></Link> {(user.desig === "Admin" || user.desig === "Developer" || user.desig === "Admin Assistant") && <i onClick={() => deleteApplication(v._id)} className="fa-solid fa-trash"></i>}</td>
                                             </tr>
                                         )
                                     })
@@ -504,9 +507,9 @@ const Applications = () => {
                                                 <td className="text-center">{v.desig === "" ? "-" : v.desig}</td>
                                                 <td className={v.ref === "" ? "text-center" : ""}>{v.ref === "" ? "-" : v.ref}</td>
                                                 <td>{v.pCountries.toString()}</td>
-                                                <td>{v.refTo}</td>
+                                                <td>{counsolers.filter(i=>i.userCode === v.refTo)[0]?.username}</td>
                                                 <td>{v.hereAbout}</td>
-                                                <td style={{ padding: "5px 10px",paddingTop:"15px" }} className='actionsIcons'> <span title='View & Add Comments' ><i onClick={() => targetedRemarks(v.rem, v._id)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" className="fa-solid fa-comment"></i>{v.rem.length ? <span>{v.rem.length}</span> : ""}</span> {(user.desig === "Admin" || user.desig === "Developer" || user.desig === "Receptionist") && <Link to="/admin/campusEnquiryForm" state={v && v} ><i title='Edit' className="fa-solid updateIcon fa-pen-to-square"></i></Link>}  {(user.desig === "Admin" || user.desig === "Developer") && <i title='Delete' onClick={() => deleteApplication(v?._id)} className="fa-solid fa-trash"></i>}</td>
+                                                <td style={{ padding: "5px 10px", paddingTop: "15px" }} className='actionsIcons'> <span title='View & Add Comments' ><i onClick={() => targetedRemarks(v.rem, v._id)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" className="fa-solid fa-comment"></i>{v.rem.length ? <span>{v.rem.length}</span> : ""}</span> {(user.desig === "Admin" || user.desig === "Developer" || user.desig === "Receptionist") && <Link to="/admin/campusEnquiryForm" state={v && v} ><i title='Edit' className="fa-solid updateIcon fa-pen-to-square"></i></Link>}  {(user.desig === "Admin" || user.desig === "Developer") && <i title='Delete' onClick={() => deleteApplication(v?._id)} className="fa-solid fa-trash"></i>}</td>
                                             </tr>
                                         )
                                     })

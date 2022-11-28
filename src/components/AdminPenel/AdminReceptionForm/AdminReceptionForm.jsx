@@ -13,6 +13,21 @@ const AdminReceptionForm = () => {
     const [updating, setUpdating] = useState(false)
     const [submitLoading, setSubmitLoading] = useState(false)
 
+    const [counsolers, setCounsolers] = useState([])
+
+    // Fetch Users From DB
+    useEffect(() => {
+        try {
+            const fetchCounsolers = async () => {
+                let response = await axios.get("https://edifygroup.herokuapp.com/api/auth/allUsers?desig=Counselor")
+                setCounsolers(response.data.data)
+            }
+            fetchCounsolers()
+        } catch (error) {
+            console.log(error)
+        }
+    }, [])
+
     const [formData, setFormData] = useState({
         branch: user.username.split(" ")[0],
         name: "",
@@ -199,14 +214,14 @@ const AdminReceptionForm = () => {
                                 <input type="text" value={formData.ref} onChange={handleFormChange} id='ref' name='ref' placeholder='Enter Designation' />
                             </div>
 
-                            <div className="col-8 eachInput">
+                            <div className="col-12 eachInput">
                                 <label htmlFor="pCountries">Select Your Prefered Countries : <span style={{ color: "red" }}>*</span> </label>
                                 <span className='checkBox'>
                                     <span className="eachCheckBox" >
                                         <input name='pCountries' checked={formData.pCountries.indexOf('Australia') !== -1} value="Australia" type="checkBox" onChange={handleFormChange} /><span>Australia</span>
                                     </span>
                                     <span className="eachCheckBox">
-                                        <input name='pCountries' checked={formData.pCountries.indexOf('UK') !== -1} value="UK" type="checkBox" onChange={handleFormChange} /><span>United Kingdom</span>
+                                        <input name='pCountries' checked={formData.pCountries.indexOf('UK') !== -1} value="UK" type="checkBox" onChange={handleFormChange} /><span>UK</span>
                                     </span>
                                     <span className="eachCheckBox">
                                         <input name='pCountries' checked={formData.pCountries.indexOf('USA') !== -1} value="USA" type="checkBox" onChange={handleFormChange} /><span>USA</span>
@@ -223,7 +238,25 @@ const AdminReceptionForm = () => {
                                 </span>
                             </div>
 
-                            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 eachInput">
+                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 eachInput">
+                                <label htmlFor="refTo">English Language Test<span style={{ color: "red" }}>*</span> : </label>
+                                <select
+                                    value={formData.refTo}
+                                    onChange={handleFormChange}
+                                    name='refTo'
+                                    id='refTo'>
+                                    <option value="">Select ELT</option>
+                                    <option value="ELT-Acad">IELTS Academic</option>
+                                    <option value="ELT-GT">IELTS General Training</option>
+                                    <option value="ELT-LS">IELTS Life Skills</option>
+                                    <option value="ELT-PTE">PTE</option>
+                                    <option value="ELT-LC">Language Cert</option>
+                                    <option value="ELT-OIETC">OIETC</option>
+
+                                </select>
+                            </div>
+
+                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 eachInput">
                                 <label htmlFor="refTo">Refer To <span style={{ color: "red" }}>*</span> : </label>
                                 <select
                                     value={formData.refTo}
@@ -231,18 +264,14 @@ const AdminReceptionForm = () => {
                                     name='refTo'
                                     id='refTo'>
                                     <option value="">Select Counsellor</option>
-                                    <option value="M. Azeem Qasim">M. Azeem Qasim</option>
-                                    <option value="Syed M. Nouman">Syed M. Nouman</option>
-                                    <option value="M. Tariq">M. Tariq</option>
-                                    <option value="Junaid Sohail">Junaid Sohail</option>
-                                    <option value="Amaima Iftikhar">Amaima Iftikhar</option>
-                                    <option value="Nasir Raza">Nasir Raza</option>
-                                    <option value="Marwa Yasin">Marwa Yasin</option>
-                                    <option value="M. Bilal">M. Bilal</option>
-                                    <option value="Mehreen Tiwana">Mehreen Tiwana</option>
-                                    <option value="M. Azhar">M. Azhar</option>
-                                    <option value="Ghazna Sajid">Ghazna Sajid</option>
-                                    <option value="Asma Alam">Asma Alam</option>
+                                    {
+                                        counsolers.map((v, i) => {
+                                            return (
+
+                                                <option key={i} value={`${v.userCode}`}>{v.username}</option>
+                                            )
+                                        })
+                                    }
                                 </select>
                             </div>
 
@@ -277,3 +306,6 @@ const AdminReceptionForm = () => {
 }
 
 export default AdminReceptionForm
+
+
+

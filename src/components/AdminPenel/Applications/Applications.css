@@ -46,7 +46,7 @@
     border: .5px solid rgb(204, 204, 204);
     padding: 2px 5px;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     white-space: nowrap;
 }
 
@@ -242,14 +242,14 @@
 
 .serialStickyheadName{
     position: sticky;
-    left: 26px;
+    left: 27px;
     top: 0;
     background-color: #d2d3ed;
 }
 
 .serialStickyName{
     position: sticky;
-    left: 26px;
+    left: 27px;
     background-color: #fff;
 }
 

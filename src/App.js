@@ -34,6 +34,7 @@ import AdminHome from './components/AdminPenel/AdminHome/AdminHome';
 import Practise from './components/Practise'
 import CvDesign from './components/Pages/CvDesign/CvDesign';
 import AdminReceptionForm from './components/AdminPenel/AdminReceptionForm/AdminReceptionForm'
+import ManageUsers from './components/AdminPenel/ManageUsers/ManageUsers';
 
 function App() {
   const {user} = useContext(Context);
@@ -71,9 +72,11 @@ function App() {
           <Route path='/admin/' element={!user?<Login />: <AdminPenel />}>
             <Route path='updates' element={user?.desig === "Developer" || user?.desig === "Admin" ? <AdminUpdates /> : <AdminHome /> } />
             <Route path='blogs' element={user?.desig === "Developer" || user?.desig === "Admin" ? <AdminBlogs /> : <AdminHome /> } />
+            <Route path='reviews' element={user?.desig === "Developer" || user?.desig === "Admin" ? <AdminReviews /> : <AdminHome />} />
+            <Route path='users' element={user?.desig === "Developer" || user?.desig === "Admin" ? <ManageUsers /> : <AdminHome />} />
+
             <Route path='home' element={<AdminHome />} />
             <Route path='campusEnquiryForm' element={<AdminReceptionForm/>}  />
-            <Route path='reviews' element={user?.desig === "Developer" || user?.desig === "Admin" ? <AdminReviews /> : <AdminHome />} />
             <Route path='applications' element={<Applications />} />
             <Route path='applications/apply/:id' element={<ApplicationView />} />
           </Route>
